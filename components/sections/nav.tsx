@@ -26,12 +26,12 @@ export function Nav() {
           ))}
         </nav>
         <Button
-          asChild
+          render={
+            <a href={siteConfig.whatsappLink} target="_blank" rel="noopener noreferrer" />
+          }
           className="rounded-full bg-signal text-white hover:bg-signal/90 active:scale-[0.98]"
         >
-          <a href={siteConfig.whatsappLink} target="_blank" rel="noopener noreferrer">
-            Chat on WhatsApp
-          </a>
+          Chat on WhatsApp
         </Button>
       </div>
     </header>

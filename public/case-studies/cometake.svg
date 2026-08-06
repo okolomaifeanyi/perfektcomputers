@@ -1,0 +1,6 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder image for Cometake">
+  <rect width="1200" height="900" fill="#F6F7F9"/>
+  <rect x="1" y="1" width="1198" height="898" fill="none" stroke="#E3E6EC" stroke-width="2"/>
+  <text x="600" y="440" font-family="system-ui, sans-serif" font-size="40" font-weight="600" fill="#0E1524" text-anchor="middle" dominant-baseline="middle">Cometake</text>
+  <text x="600" y="490" font-family="system-ui, sans-serif" font-size="18" fill="#5B6472" text-anchor="middle" dominant-baseline="middle">Screenshot coming soon</text>
+</svg>

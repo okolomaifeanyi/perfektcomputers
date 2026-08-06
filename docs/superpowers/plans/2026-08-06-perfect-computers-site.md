@@ -14,6 +14,7 @@ Copied verbatim (or paraphrased where noted) from `docs/superpowers/specs/2026-0
 
 - Next.js App Router + TypeScript strict — no `any` anywhere.
 - Tailwind CSS v4 + shadcn/ui, themed entirely via CSS variables — shadcn primitives are never left at default colors.
+- **Discovered during Task 5 execution:** the installed `components/ui/button.tsx` is built on `@base-ui/react/button`, not Radix/Slot — it has no `asChild` prop. To render the `Button` as a link (every CTA in this plan), use Base UI's `render` prop instead: `<Button render={<a href="..." />}>Label</Button>`. All CTA code below already reflects this; noted here so it isn't silently reintroduced.
 - Icons: lucide-react only, `strokeWidth` standardized at `1.5`.
 - Fonts: `geist` npm package (Geist + Geist Mono via `next/font`, self-hosted, zero external font requests).
 - Motion: **simplified from the design spec** — pure CSS only (a single `@media (prefers-reduced-motion: no-preference)`-gated fade-in-up on the hero, plus standard `transition`/`active:` states for tactile CTA feedback). This delivers the spec's MOTION_INTENSITY 4 requirement (fluid entrance + tactile feedback, nothing scroll-hijacked) without pulling in the `motion` package or converting any section to a Client Component. Flagged here as a deliberate deviation from the spec's literal `motion/react` mention — same visual outcome, less complexity.
@@ -846,12 +847,12 @@ export function Nav() {
           ))}
         </nav>
         <Button
-          asChild
+          render={
+            <a href={siteConfig.whatsappLink} target="_blank" rel="noopener noreferrer" />
+          }
           className="rounded-full bg-signal text-white hover:bg-signal/90 active:scale-[0.98]"
         >
-          <a href={siteConfig.whatsappLink} target="_blank" rel="noopener noreferrer">
-            Chat on WhatsApp
-          </a>
+          Chat on WhatsApp
         </Button>
       </div>
     </header>
@@ -984,17 +985,17 @@ export function Hero() {
           </p>
           <div className="mt-8">
             <Button
-              asChild
+              render={
+                <a
+                  href={siteConfig.whatsappLink}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                />
+              }
               size="lg"
               className="rounded-full bg-signal px-8 text-base text-white hover:bg-signal/90 active:scale-[0.98]"
             >
-              <a
-                href={siteConfig.whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Chat on WhatsApp
-              </a>
+              Chat on WhatsApp
             </Button>
           </div>
         </div>
@@ -1390,19 +1391,19 @@ export function Pricing() {
                 ))}
               </ul>
               <Button
-                asChild
+                render={
+                  <a
+                    href={siteConfig.whatsappLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  />
+                }
                 variant={tier.featured ? "default" : "outline"}
                 className={`mt-6 rounded-full active:scale-[0.98] ${
                   tier.featured ? "bg-indigo text-white hover:bg-indigo/90" : ""
                 }`}
               >
-                <a
-                  href={siteConfig.whatsappLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Chat on WhatsApp
-                </a>
+                Chat on WhatsApp
               </Button>
             </div>
           ))}
@@ -1487,17 +1488,17 @@ export function Contact() {
         </p>
         <div className="mt-8 flex flex-col items-center gap-4">
           <Button
-            asChild
+            render={
+              <a
+                href={siteConfig.whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+              />
+            }
             size="lg"
             className="rounded-full bg-signal px-8 text-base text-white hover:bg-signal/90 active:scale-[0.98]"
           >
-            <a
-              href={siteConfig.whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Chat on WhatsApp
-            </a>
+            Chat on WhatsApp
           </Button>
           <a
             href={`mailto:${siteConfig.email}`}

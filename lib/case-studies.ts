@@ -92,6 +92,7 @@ export const caseStudies: CaseStudy[] = [
       "Vendors get their own dashboard and permissions, but customers check out once, even when a cart spans multiple vendors.",
     techStack: ["Next.js", "Paystack", "Node.js"],
     imageSrc: "/case-studies/marketplace.svg",
-    imageAlt: "Placeholder cover image for the multi-vendor marketplace case study",
+    imageAlt:
+      "Placeholder cover image for the multi-vendor marketplace case study",
   },
 ];

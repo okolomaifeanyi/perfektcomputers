@@ -45,7 +45,9 @@ export default function RootLayout({
       <body className="bg-paper font-sans text-ink antialiased">
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(localBusinessJsonLd),
+          }}
         />
         {children}
       </body>

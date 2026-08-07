@@ -2,12 +2,12 @@
 @import "tw-animate-css";
 
 :root {
-  --paper: #F6F7F9;
-  --ink: #0E1524;
-  --indigo: #3854E6;
-  --signal: #25D366;
-  --muted: #5B6472;
-  --line: #E3E6EC;
+  --paper: #f6f7f9;
+  --ink: #0e1524;
+  --indigo: #3854e6;
+  --signal: #25d366;
+  --muted: #5b6472;
+  --line: #e3e6ec;
   --radius: 0.75rem;
 }
 

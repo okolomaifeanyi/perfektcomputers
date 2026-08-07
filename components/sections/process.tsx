@@ -19,7 +19,8 @@ const steps = [
   {
     number: "4",
     title: "Launch + handover",
-    description: "Your site goes live, and you get everything you need to run it.",
+    description:
+      "Your site goes live, and you get everything you need to run it.",
   },
 ];
 

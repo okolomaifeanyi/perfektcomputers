@@ -5,14 +5,17 @@ import { siteConfig } from "@/lib/site-config";
 
 export function Pricing() {
   return (
-    <section id="pricing" className="border-t border-line bg-paper py-16 md:py-24">
+    <section
+      id="pricing"
+      className="border-t border-line bg-paper py-16 md:py-24"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
           Pricing
         </h2>
         <p className="mt-3 max-w-[60ch] text-sm text-muted">
-          Starting prices below. Every project gets a fixed quote after a
-          quick consultation.
+          Starting prices below. Every project gets a fixed quote after a quick
+          consultation.
         </p>
         <div className="mt-10 grid gap-6 sm:grid-cols-3">
           {pricingTiers.map((tier) => (
@@ -36,7 +39,10 @@ export function Pricing() {
               <p className="mt-2 text-sm text-muted">{tier.description}</p>
               <ul className="mt-6 flex flex-1 flex-col gap-2">
                 {tier.features.map((feature) => (
-                  <li key={feature} className="flex items-start gap-2 text-sm text-ink">
+                  <li
+                    key={feature}
+                    className="flex items-start gap-2 text-sm text-ink"
+                  >
                     <Check
                       className="mt-0.5 h-4 w-4 shrink-0 text-indigo"
                       strokeWidth={2}

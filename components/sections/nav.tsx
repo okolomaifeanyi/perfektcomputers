@@ -11,7 +11,10 @@ export function Nav() {
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-paper/90 backdrop-blur supports-[backdrop-filter]:bg-paper/70">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <a href="#top" className="text-lg font-semibold tracking-tight text-ink">
+        <a
+          href="#top"
+          className="text-lg font-semibold tracking-tight text-ink"
+        >
           {siteConfig.name}
         </a>
         <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
@@ -27,7 +30,11 @@ export function Nav() {
         </nav>
         <Button
           render={
-            <a href={siteConfig.whatsappLink} target="_blank" rel="noopener noreferrer" />
+            <a
+              href={siteConfig.whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+            />
           }
           className="rounded-full bg-signal text-white hover:bg-signal/90 active:scale-[0.98]"
         >

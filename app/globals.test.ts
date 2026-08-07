@@ -8,12 +8,12 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 describe("design tokens", () => {
   it("defines all six brand color tokens with their approved hex values", () => {
     const css = readFileSync(resolve(__dirname, "globals.css"), "utf-8");
-    expect(css).toContain("--paper: #F6F7F9");
-    expect(css).toContain("--ink: #0E1524");
-    expect(css).toContain("--indigo: #3854E6");
-    expect(css).toContain("--signal: #25D366");
-    expect(css).toContain("--muted: #5B6472");
-    expect(css).toContain("--line: #E3E6EC");
+    expect(css).toContain("--paper: #f6f7f9");
+    expect(css).toContain("--ink: #0e1524");
+    expect(css).toContain("--indigo: #3854e6");
+    expect(css).toContain("--signal: #25d366");
+    expect(css).toContain("--muted: #5b6472");
+    expect(css).toContain("--line: #e3e6ec");
   });
 
   it("never defines a .dark override block (dark mode is deferred)", () => {

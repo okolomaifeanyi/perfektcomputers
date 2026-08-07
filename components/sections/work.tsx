@@ -26,19 +26,28 @@ export function Work() {
                 />
               </div>
               <div className="flex flex-1 flex-col p-6">
-                <h3 className="text-lg font-semibold text-ink">{study.title}</h3>
+                <h3 className="text-lg font-semibold text-ink">
+                  {study.title}
+                </h3>
                 {study.tagline ? (
-                  <p className="mt-1 text-sm italic text-muted">{study.tagline}</p>
+                  <p className="mt-1 text-sm italic text-muted">
+                    {study.tagline}
+                  </p>
                 ) : null}
                 <p className="mt-3 text-sm text-muted">{study.problem}</p>
                 <p className="mt-2 text-sm text-ink">{study.whatWasBuilt}</p>
-                <p className="mt-2 text-sm text-indigo">{study.standoutDetail}</p>
+                <p className="mt-2 text-sm text-indigo">
+                  {study.standoutDetail}
+                </p>
                 <ul
                   className="mt-4 flex flex-wrap gap-2 font-mono text-xs text-muted"
                   aria-label={`${study.title} tech stack`}
                 >
                   {study.techStack.map((tech) => (
-                    <li key={tech} className="rounded-md border border-line px-2 py-1">
+                    <li
+                      key={tech}
+                      className="rounded-md border border-line px-2 py-1"
+                    >
                       {tech}
                     </li>
                   ))}

@@ -27,21 +27,27 @@ const standardServices = [
 
 export function Services() {
   return (
-    <section
-      id="services"
-      className="scroll-mt-20 border-t border-line bg-paper py-16 md:py-24"
-    >
+    <section id="services" className="scroll-mt-20 bg-white py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
           Services
         </h2>
+        <p className="mt-3 max-w-[60ch] text-pretty text-sm text-muted">
+          Everything a small business needs to get online, take payments, and
+          stay running.
+        </p>
         <div className="mt-10 grid gap-4 sm:grid-cols-3">
           {standardServices.map((service) => (
             <div
               key={service.name}
-              className="rounded-xl border border-line bg-white p-6"
+              className="rounded-xl bg-paper p-6 shadow-[0_1px_2px_rgba(14,21,36,0.05)]"
             >
-              <service.icon className="h-6 w-6 text-indigo" strokeWidth={1.5} />
+              <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo/10">
+                <service.icon
+                  className="h-5 w-5 text-indigo"
+                  strokeWidth={1.5}
+                />
+              </span>
               <h3 className="mt-4 text-base font-semibold text-ink">
                 {service.name}
               </h3>
@@ -50,8 +56,10 @@ export function Services() {
           ))}
         </div>
         <div className="mt-4 grid gap-4 sm:grid-cols-3">
-          <div className="rounded-xl border border-line bg-white p-6 sm:col-span-2">
-            <Wallet className="h-6 w-6 text-indigo" strokeWidth={1.5} />
+          <div className="rounded-xl bg-paper p-6 shadow-[0_1px_2px_rgba(14,21,36,0.05)] sm:col-span-2">
+            <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo/10">
+              <Wallet className="h-5 w-5 text-indigo" strokeWidth={1.5} />
+            </span>
             <h3 className="mt-4 text-base font-semibold text-ink">
               Payments &amp; Wallets
             </h3>
@@ -61,7 +69,9 @@ export function Services() {
             </p>
           </div>
           <div className="rounded-xl border border-indigo/30 bg-indigo/5 p-6">
-            <RefreshCw className="h-6 w-6 text-indigo" strokeWidth={1.5} />
+            <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo/10">
+              <RefreshCw className="h-5 w-5 text-indigo" strokeWidth={1.5} />
+            </span>
             <h3 className="mt-4 text-base font-semibold text-ink">Care Plan</h3>
             <p className="mt-2 text-sm text-muted">
               A small monthly fee keeps your site updated, backed up, and

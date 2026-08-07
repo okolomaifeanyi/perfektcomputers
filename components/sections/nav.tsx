@@ -14,7 +14,7 @@ export function Nav() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <a
           href="#top"
-          className="text-lg font-semibold tracking-tight text-ink"
+          className="rounded-md text-lg font-semibold tracking-tight text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo/60"
         >
           {siteConfig.name}
         </a>
@@ -23,7 +23,7 @@ export function Nav() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-muted transition-colors hover:text-ink"
+              className="rounded-md text-sm font-medium text-muted transition-colors hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo/60"
             >
               {link.label}
             </a>

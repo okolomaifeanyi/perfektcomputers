@@ -6,10 +6,7 @@ import { siteConfig } from "@/lib/site-config";
 
 export function Pricing() {
   return (
-    <section
-      id="pricing"
-      className="scroll-mt-20 border-t border-line bg-paper py-16 md:py-24"
-    >
+    <section id="pricing" className="scroll-mt-20 bg-paper py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
           Pricing
@@ -25,7 +22,7 @@ export function Pricing() {
               className={`flex flex-col rounded-xl border p-6 ${
                 tier.featured
                   ? "border-indigo bg-white shadow-[0_1px_2px_rgba(14,21,36,0.04),0_16px_40px_rgba(56,84,230,0.12)] sm:-mt-4 sm:mb-4"
-                  : "border-line bg-white"
+                  : "border-line bg-white shadow-[0_1px_2px_rgba(14,21,36,0.04)]"
               }`}
             >
               {tier.featured ? (

@@ -4,7 +4,7 @@ export function WhatsappMockup() {
   return (
     <div
       aria-hidden="true"
-      className="w-full max-w-sm rounded-2xl border border-line bg-white p-4 shadow-[0_1px_2px_rgba(14,21,36,0.04),0_12px_32px_rgba(14,21,36,0.08)]"
+      className="w-full rounded-2xl border border-line bg-white p-4 shadow-[0_2px_4px_rgba(14,21,36,0.04),0_20px_48px_rgba(14,21,36,0.12)]"
     >
       <div className="flex items-center gap-2 border-b border-line pb-3">
         <span className="flex h-8 w-8 items-center justify-center rounded-full bg-signal text-sm font-semibold text-ink">
@@ -23,9 +23,12 @@ export function WhatsappMockup() {
           <div className="rounded-2xl rounded-tr-sm bg-signal/10 px-3 py-2 text-sm text-ink">
             Sure, let&apos;s talk about your store. What are you selling?
           </div>
-          <span className="flex items-center gap-0.5 pr-1 text-muted">
-            <Check className="h-3 w-3" strokeWidth={2.5} />
-            <Check className="-ml-1.5 h-3 w-3" strokeWidth={2.5} />
+          <span className="flex items-center gap-1 pr-1 text-[10px] text-muted">
+            10:42
+            <span className="flex items-center">
+              <Check className="h-3 w-3" strokeWidth={2.5} />
+              <Check className="-ml-1.5 h-3 w-3" strokeWidth={2.5} />
+            </span>
           </span>
         </div>
       </div>

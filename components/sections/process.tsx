@@ -26,21 +26,26 @@ const steps = [
 
 export function Process() {
   return (
-    <section
-      id="process"
-      className="border-t border-line bg-paper py-16 md:py-24"
-    >
+    <section id="process" className="scroll-mt-20 bg-white py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
           How it works
         </h2>
-        <ol className="mt-10 grid gap-8 sm:grid-cols-4">
-          {steps.map((step) => (
+        <ol className="mt-10 grid gap-10 sm:grid-cols-4 sm:gap-8">
+          {steps.map((step, index) => (
             <li key={step.number}>
-              <span className="font-mono text-3xl font-semibold text-indigo">
-                {step.number}
-              </span>
-              <h3 className="mt-3 text-base font-semibold text-ink">
+              <div className="flex items-center gap-4">
+                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-indigo/10 font-mono text-lg font-semibold text-indigo">
+                  {step.number}
+                </span>
+                {index < steps.length - 1 ? (
+                  <span
+                    aria-hidden="true"
+                    className="hidden h-px flex-1 bg-line sm:block"
+                  />
+                ) : null}
+              </div>
+              <h3 className="mt-4 text-base font-semibold text-ink">
                 {step.title}
               </h3>
               <p className="mt-2 text-sm text-muted">{step.description}</p>

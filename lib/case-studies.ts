@@ -22,8 +22,8 @@ export const caseStudies: CaseStudy[] = [
     standoutDetail:
       "Customers can start browsing on the website and finish checkout in the app without losing their cart.",
     techStack: ["React Native", "Next.js", "Node.js"],
-    imageSrc: "/case-studies/cometake.svg",
-    imageAlt: "Placeholder cover image for the Cometake case study",
+    imageSrc: "/case-studies/cometake.png",
+    imageAlt: "Cometake storefront homepage with featured product carousel",
   },
   {
     id: "idikarh-properties",
@@ -49,9 +49,9 @@ export const caseStudies: CaseStudy[] = [
     standoutDetail:
       "Search and filtering were built to handle years of back issues without the archive page slowing down.",
     techStack: ["Next.js", "PostgreSQL", "Full-text search"],
-    imageSrc: "/case-studies/ijsr.svg",
+    imageSrc: "/case-studies/ijsr.png",
     imageAlt:
-      "Placeholder cover image for the International Journal of Spectrum Research case study",
+      "International Journal of Spectrum Research homepage with journal title and mission statement",
   },
   {
     id: "savannah-spot",
@@ -91,8 +91,8 @@ export const caseStudies: CaseStudy[] = [
     standoutDetail:
       "Vendors get their own dashboard and permissions, but customers check out once, even when a cart spans multiple vendors.",
     techStack: ["Next.js", "Paystack", "Node.js"],
-    imageSrc: "/case-studies/marketplace.svg",
+    imageSrc: "/case-studies/marketplace.png",
     imageAlt:
-      "Placeholder cover image for the multi-vendor marketplace case study",
+      "Perfekt Mart marketplace homepage with category grid and bill payment promo",
   },
 ];

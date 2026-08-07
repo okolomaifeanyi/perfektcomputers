@@ -19,7 +19,7 @@ export function Pricing() {
           {pricingTiers.map((tier) => (
             <div
               key={tier.id}
-              className={`reveal-on-scroll flex flex-col rounded-xl border p-6 transition-all duration-500 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 ${
+              className={`reveal-on-scroll flex flex-col rounded-xl border p-6 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 ${
                 tier.featured
                   ? "border-gold-deep bg-white shadow-[0_1px_2px_rgba(14,21,36,0.04),0_16px_40px_rgba(138,106,29,0.14)] hover:shadow-[0_1px_2px_rgba(14,21,36,0.04),0_28px_56px_rgba(138,106,29,0.24)] sm:-mt-4 sm:mb-4"
                   : "border-line bg-white shadow-[0_1px_2px_rgba(14,21,36,0.04)] hover:border-gold-deep/30 hover:shadow-[0_16px_36px_rgba(138,106,29,0.16)]"

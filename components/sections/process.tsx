@@ -24,6 +24,16 @@ const steps = [
   },
 ];
 
+// Plain CSS classes (see globals.css), one per fixed step, matching the
+// existing .animate-fade-in-up convention. Kept as literal strings so
+// Tailwind never has to statically discover a runtime-computed class name.
+const stepPulseClasses = [
+  "animate-step-pulse-1",
+  "animate-step-pulse-2",
+  "animate-step-pulse-3",
+  "animate-step-pulse-4",
+];
+
 export function Process() {
   return (
     <section id="process" className="scroll-mt-20 bg-white py-16 md:py-24">
@@ -35,8 +45,12 @@ export function Process() {
           {steps.map((step, index) => (
             <li key={step.number}>
               <div className="flex items-center gap-4">
-                <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-indigo/10 font-mono text-lg font-semibold text-indigo">
-                  {step.number}
+                <span className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-indigo/10 font-mono text-lg font-semibold text-indigo">
+                  <span
+                    aria-hidden="true"
+                    className={`absolute inset-0 rounded-full bg-indigo/25 opacity-0 ${stepPulseClasses[index]}`}
+                  />
+                  <span className="relative">{step.number}</span>
                 </span>
                 {index < steps.length - 1 ? (
                   <span

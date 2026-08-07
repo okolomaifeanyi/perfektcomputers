@@ -12,16 +12,16 @@ export function Work() {
         <p className="mt-3 max-w-[60ch] text-pretty text-sm text-muted">
           Six shipped projects, from online stores to real-time platforms.
         </p>
-        <div className="mt-10 grid grid-flow-row-dense gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="reveal-stagger mt-10 grid grid-flow-row-dense gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {caseStudies.map((study) => (
             <article
               key={study.id}
-              className={`flex flex-col overflow-hidden rounded-xl border border-line bg-white shadow-[0_1px_2px_rgba(14,21,36,0.04)] ${
+              className={`reveal-on-scroll group flex flex-col overflow-hidden rounded-xl border border-line bg-white shadow-[0_1px_2px_rgba(14,21,36,0.04)] transition-all duration-500 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:border-indigo/30 hover:shadow-[0_16px_36px_rgba(56,84,230,0.14)] ${
                 study.featured ? "sm:col-span-2" : ""
               }`}
             >
               <div
-                className="relative w-full bg-paper"
+                className="relative w-full overflow-hidden bg-paper"
                 style={{
                   aspectRatio: `${study.imageWidth} / ${study.imageHeight}`,
                 }}
@@ -35,7 +35,7 @@ export function Work() {
                       ? "(min-width: 1024px) 66vw, 100vw"
                       : "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                   }
-                  className="object-contain"
+                  className="object-contain transition-transform duration-700 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] group-hover:scale-[1.04]"
                 />
               </div>
               <div className="flex flex-1 flex-col p-6">

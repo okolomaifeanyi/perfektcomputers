@@ -15,14 +15,14 @@ export function Pricing() {
           Starting prices below. Every project gets a fixed quote after a quick
           consultation.
         </p>
-        <div className="mt-10 grid gap-6 sm:grid-cols-3">
+        <div className="reveal-stagger mt-10 grid gap-6 sm:grid-cols-3">
           {pricingTiers.map((tier) => (
             <div
               key={tier.id}
-              className={`flex flex-col rounded-xl border p-6 ${
+              className={`reveal-on-scroll flex flex-col rounded-xl border p-6 transition-all duration-500 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 ${
                 tier.featured
-                  ? "border-indigo bg-white shadow-[0_1px_2px_rgba(14,21,36,0.04),0_16px_40px_rgba(56,84,230,0.12)] sm:-mt-4 sm:mb-4"
-                  : "border-line bg-white shadow-[0_1px_2px_rgba(14,21,36,0.04)]"
+                  ? "border-indigo bg-white shadow-[0_1px_2px_rgba(14,21,36,0.04),0_16px_40px_rgba(56,84,230,0.12)] hover:shadow-[0_1px_2px_rgba(14,21,36,0.04),0_28px_56px_rgba(56,84,230,0.22)] sm:-mt-4 sm:mb-4"
+                  : "border-line bg-white shadow-[0_1px_2px_rgba(14,21,36,0.04)] hover:border-indigo/30 hover:shadow-[0_16px_36px_rgba(56,84,230,0.14)]"
               }`}
             >
               {tier.featured ? (

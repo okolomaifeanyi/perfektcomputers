@@ -69,4 +69,145 @@ body {
   .animate-fade-in-up {
     animation: fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
   }
+
+  /* Decorative hero wave: transform-only, GPU-composited, seamless loop. */
+  @keyframes wave-drift {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-wave-drift {
+    animation: wave-drift 22s linear infinite;
+  }
+
+  /* Process step numerals: a round-robin spotlight across 4 fixed steps.
+   * Each keyframe owns one quarter of a shared 8s loop; only opacity and
+   * transform are touched, so this is safe to run indefinitely. */
+  @keyframes step-pulse-1 {
+    0% {
+      opacity: 0;
+      transform: scale(1);
+    }
+    2% {
+      opacity: 1;
+      transform: scale(1.12);
+    }
+    21% {
+      opacity: 1;
+      transform: scale(1.12);
+    }
+    23%,
+    100% {
+      opacity: 0;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes step-pulse-2 {
+    0%,
+    25% {
+      opacity: 0;
+      transform: scale(1);
+    }
+    27% {
+      opacity: 1;
+      transform: scale(1.12);
+    }
+    46% {
+      opacity: 1;
+      transform: scale(1.12);
+    }
+    48%,
+    100% {
+      opacity: 0;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes step-pulse-3 {
+    0%,
+    50% {
+      opacity: 0;
+      transform: scale(1);
+    }
+    52% {
+      opacity: 1;
+      transform: scale(1.12);
+    }
+    71% {
+      opacity: 1;
+      transform: scale(1.12);
+    }
+    73%,
+    100% {
+      opacity: 0;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes step-pulse-4 {
+    0%,
+    75% {
+      opacity: 0;
+      transform: scale(1);
+    }
+    77% {
+      opacity: 1;
+      transform: scale(1.12);
+    }
+    96% {
+      opacity: 1;
+      transform: scale(1.12);
+    }
+    98%,
+    100% {
+      opacity: 0;
+      transform: scale(1);
+    }
+  }
+
+  .animate-step-pulse-1 {
+    animation: step-pulse-1 8s linear infinite;
+  }
+  .animate-step-pulse-2 {
+    animation: step-pulse-2 8s linear infinite;
+  }
+  .animate-step-pulse-3 {
+    animation: step-pulse-3 8s linear infinite;
+  }
+  .animate-step-pulse-4 {
+    animation: step-pulse-4 8s linear infinite;
+  }
+
+  /* Scroll-linked card entrance: native browser primitive, no JS, no
+   * scroll-event listener. Feature-detected, so unsupported browsers just
+   * render cards in their normal, fully visible state. */
+  @supports (animation-timeline: view()) {
+    .reveal-on-scroll {
+      opacity: 0;
+      animation: fade-in-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 25%;
+    }
+
+    .reveal-stagger > *:nth-child(1) {
+      animation-delay: 0ms;
+    }
+    .reveal-stagger > *:nth-child(2) {
+      animation-delay: 90ms;
+    }
+    .reveal-stagger > *:nth-child(3) {
+      animation-delay: 180ms;
+    }
+    .reveal-stagger > *:nth-child(4) {
+      animation-delay: 270ms;
+    }
+    .reveal-stagger > *:nth-child(5) {
+      animation-delay: 360ms;
+    }
+  }
 }

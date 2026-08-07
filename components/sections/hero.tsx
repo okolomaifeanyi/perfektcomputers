@@ -2,14 +2,15 @@ import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/site-config";
 import { WhatsappMockup } from "@/components/whatsapp-mockup";
+import { WaveDivider } from "@/components/wave-divider";
 
 export function Hero() {
   return (
     <section
       id="top"
-      className="mx-auto max-w-7xl scroll-mt-20 px-4 pb-16 pt-12 sm:px-6 md:pb-24 md:pt-16 lg:px-8"
+      className="relative overflow-hidden scroll-mt-20 pb-16 pt-12 md:pb-24 md:pt-16"
     >
-      <div className="grid items-center gap-12 md:grid-cols-2">
+      <div className="relative z-10 mx-auto max-w-7xl grid items-center gap-12 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
         <div>
           <h1 className="animate-fade-in-up text-balance text-4xl font-semibold tracking-tight text-ink sm:text-5xl md:text-6xl">
             Websites &amp; Apps That Get Your Business Found, and Paid
@@ -42,6 +43,7 @@ export function Hero() {
           </div>
         </div>
       </div>
+      <WaveDivider />
     </section>
   );
 }

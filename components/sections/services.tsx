@@ -25,6 +25,9 @@ const standardServices = [
   },
 ];
 
+const cardTransition =
+  "transition-all duration-500 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)]";
+
 export function Services() {
   return (
     <section id="services" className="scroll-mt-20 bg-white py-16 md:py-24">
@@ -36,13 +39,15 @@ export function Services() {
           Everything a small business needs to get online, take payments, and
           stay running.
         </p>
-        <div className="mt-10 grid gap-4 sm:grid-cols-3">
+        <div className="reveal-stagger mt-10 grid gap-4 sm:grid-cols-3">
           {standardServices.map((service) => (
             <div
               key={service.name}
-              className="rounded-xl bg-paper p-6 shadow-[0_1px_2px_rgba(14,21,36,0.05)]"
+              className={`reveal-on-scroll group rounded-xl bg-paper p-6 shadow-[0_1px_2px_rgba(14,21,36,0.05)] hover:-translate-y-1.5 hover:bg-white hover:shadow-[0_12px_32px_rgba(56,84,230,0.14)] ${cardTransition}`}
             >
-              <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo/10">
+              <span
+                className={`flex h-10 w-10 items-center justify-center rounded-lg bg-indigo/10 group-hover:scale-110 ${cardTransition}`}
+              >
                 <service.icon
                   className="h-5 w-5 text-indigo"
                   strokeWidth={1.5}
@@ -55,9 +60,13 @@ export function Services() {
             </div>
           ))}
         </div>
-        <div className="mt-4 grid gap-4 sm:grid-cols-3">
-          <div className="rounded-xl bg-paper p-6 shadow-[0_1px_2px_rgba(14,21,36,0.05)] sm:col-span-2">
-            <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo/10">
+        <div className="reveal-stagger mt-4 grid gap-4 sm:grid-cols-3">
+          <div
+            className={`reveal-on-scroll group rounded-xl bg-paper p-6 shadow-[0_1px_2px_rgba(14,21,36,0.05)] hover:-translate-y-1.5 hover:bg-white hover:shadow-[0_12px_32px_rgba(56,84,230,0.14)] sm:col-span-2 ${cardTransition}`}
+          >
+            <span
+              className={`flex h-10 w-10 items-center justify-center rounded-lg bg-indigo/10 group-hover:scale-110 ${cardTransition}`}
+            >
               <Wallet className="h-5 w-5 text-indigo" strokeWidth={1.5} />
             </span>
             <h3 className="mt-4 text-base font-semibold text-ink">
@@ -68,8 +77,12 @@ export function Services() {
               top-up.
             </p>
           </div>
-          <div className="rounded-xl border border-indigo/30 bg-indigo/5 p-6">
-            <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo/10">
+          <div
+            className={`reveal-on-scroll group rounded-xl border border-indigo/30 bg-indigo/5 p-6 hover:-translate-y-1.5 hover:shadow-[0_12px_32px_rgba(56,84,230,0.18)] ${cardTransition}`}
+          >
+            <span
+              className={`flex h-10 w-10 items-center justify-center rounded-lg bg-indigo/10 group-hover:scale-110 ${cardTransition}`}
+            >
               <RefreshCw className="h-5 w-5 text-indigo" strokeWidth={1.5} />
             </span>
             <h3 className="mt-4 text-base font-semibold text-ink">Care Plan</h3>

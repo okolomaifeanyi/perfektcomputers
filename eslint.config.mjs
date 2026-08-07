@@ -14,6 +14,10 @@ const eslintConfig = defineConfig([
     "out/**",
     "build/**",
     "next-env.d.ts",
+    // Tooling-generated scratch directories, not part of the project source.
+    ".remember/**",
+    ".claude/**",
+    ".superpowers/**",
   ]),
 ]);
 

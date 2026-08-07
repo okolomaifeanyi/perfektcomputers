@@ -42,3 +42,6 @@ next-env.d.ts
 
 # sdd workspace (scratch/tracking, not part of the shipped project)
 .superpowers/
+
+# Claude Code worktree state (tooling-generated, not part of the shipped project)
+.claude/

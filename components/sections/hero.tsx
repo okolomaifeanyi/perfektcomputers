@@ -1,4 +1,5 @@
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/site-config";
 import { WhatsappMockup } from "@/components/whatsapp-mockup";
 
@@ -6,7 +7,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="mx-auto max-w-7xl px-4 pb-16 pt-12 sm:px-6 md:pb-24 md:pt-16 lg:px-8"
+      className="mx-auto max-w-7xl scroll-mt-20 px-4 pb-16 pt-12 sm:px-6 md:pb-24 md:pt-16 lg:px-8"
     >
       <div className="grid items-center gap-12 md:grid-cols-2">
         <div className="animate-fade-in-up">
@@ -18,19 +19,17 @@ export function Hero() {
             integration experience.
           </p>
           <div className="mt-8">
-            <Button
-              render={
-                <a
-                  href={siteConfig.whatsappLink}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                />
-              }
-              size="lg"
-              className="rounded-full bg-signal px-8 text-base text-white hover:bg-signal/90 active:scale-[0.98]"
+            <a
+              href={siteConfig.whatsappLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                buttonVariants(),
+                "h-12 rounded-full bg-signal px-8 text-base text-ink hover:bg-signal/90 active:scale-[0.98]"
+              )}
             >
               Chat on WhatsApp
-            </Button>
+            </a>
           </div>
         </div>
         <div className="flex justify-center md:justify-end">

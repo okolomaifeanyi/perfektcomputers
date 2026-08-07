@@ -1,4 +1,5 @@
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/site-config";
 
 export function Contact() {
@@ -12,19 +13,17 @@ export function Contact() {
           Message us on WhatsApp for a fast reply, or email if you prefer.
         </p>
         <div className="mt-8 flex flex-col items-center gap-4">
-          <Button
-            render={
-              <a
-                href={siteConfig.whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-              />
-            }
-            size="lg"
-            className="rounded-full bg-signal px-8 text-base text-white hover:bg-signal/90 active:scale-[0.98]"
+          <a
+            href={siteConfig.whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cn(
+              buttonVariants(),
+              "h-12 rounded-full bg-signal px-8 text-base text-ink hover:bg-signal/90 active:scale-[0.98]"
+            )}
           >
             Chat on WhatsApp
-          </Button>
+          </a>
           <a
             href={`mailto:${siteConfig.email}`}
             className="text-sm text-white/70 underline underline-offset-4 hover:text-white"
@@ -32,7 +31,7 @@ export function Contact() {
             {siteConfig.email}
           </a>
         </div>
-        <p className="mt-12 text-xs text-white/40">
+        <p className="mt-12 text-xs text-white/60">
           &copy; {new Date().getFullYear()} {siteConfig.name}. All rights
           reserved.
         </p>

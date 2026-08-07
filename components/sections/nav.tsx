@@ -1,4 +1,5 @@
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/site-config";
 
 const navLinks = [
@@ -28,18 +29,17 @@ export function Nav() {
             </a>
           ))}
         </nav>
-        <Button
-          render={
-            <a
-              href={siteConfig.whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-            />
-          }
-          className="rounded-full bg-signal text-white hover:bg-signal/90 active:scale-[0.98]"
+        <a
+          href={siteConfig.whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={cn(
+            buttonVariants(),
+            "rounded-full bg-signal text-ink hover:bg-signal/90 active:scale-[0.98]"
+          )}
         >
           Chat on WhatsApp
-        </Button>
+        </a>
       </div>
     </header>
   );

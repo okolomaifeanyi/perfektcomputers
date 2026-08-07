@@ -29,7 +29,7 @@ export function Services() {
   return (
     <section
       id="services"
-      className="border-t border-line bg-paper py-16 md:py-24"
+      className="scroll-mt-20 border-t border-line bg-paper py-16 md:py-24"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-semibold tracking-tight text-ink sm:text-4xl">

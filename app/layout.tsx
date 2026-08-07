@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
+import { siteConfig } from "@/lib/site-config";
 import "./globals.css";
 
-const siteUrl = "https://perfectcomputers.com.ng";
-
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(siteConfig.url),
   title: "Perfect Computers | Websites & Apps for Nigerian Businesses",
   description:
     "Full-stack web and mobile developer building business websites, online stores, and apps for Nigerian small businesses, with Paystack and VTU integration experience.",
@@ -14,8 +13,8 @@ export const metadata: Metadata = {
     title: "Perfect Computers",
     description:
       "Websites and apps that get your business found, and paid. Chat on WhatsApp for a fixed quote.",
-    url: siteUrl,
-    siteName: "Perfect Computers",
+    url: siteConfig.url,
+    siteName: siteConfig.name,
     locale: "en_NG",
     type: "website",
   },
@@ -29,9 +28,9 @@ export const metadata: Metadata = {
 const localBusinessJsonLd = {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
-  name: "Perfect Computers",
-  url: siteUrl,
-  email: "ifeanyiokoloma@gmail.com",
+  name: siteConfig.name,
+  url: siteConfig.url,
+  email: siteConfig.email,
   areaServed: "NG",
   description:
     "Full-stack web and mobile development, payment and VTU integration for Nigerian small businesses.",

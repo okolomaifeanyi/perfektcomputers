@@ -3,12 +3,15 @@ import { caseStudies } from "@/lib/case-studies";
 
 export function Work() {
   return (
-    <section id="work" className="border-t border-line bg-paper py-16 md:py-24">
+    <section
+      id="work"
+      className="scroll-mt-20 border-t border-line bg-paper py-16 md:py-24"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
           Work
         </h2>
-        <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 grid grid-flow-row-dense gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {caseStudies.map((study) => (
             <article
               key={study.id}
@@ -21,7 +24,11 @@ export function Work() {
                   src={study.imageSrc}
                   alt={study.imageAlt}
                   fill
-                  sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  sizes={
+                    study.featured
+                      ? "(min-width: 1024px) 66vw, 100vw"
+                      : "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                  }
                   className="object-cover"
                 />
               </div>

@@ -7,7 +7,7 @@ export function WhatsappMockup() {
       className="w-full max-w-sm rounded-2xl border border-line bg-white p-4 shadow-[0_1px_2px_rgba(14,21,36,0.04),0_12px_32px_rgba(14,21,36,0.08)]"
     >
       <div className="flex items-center gap-2 border-b border-line pb-3">
-        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-signal text-sm font-semibold text-white">
+        <span className="flex h-8 w-8 items-center justify-center rounded-full bg-signal text-sm font-semibold text-ink">
           PC
         </span>
         <div>

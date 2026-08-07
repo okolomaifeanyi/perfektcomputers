@@ -1,5 +1,6 @@
 import { Check } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 import { pricingTiers } from "@/lib/pricing";
 import { siteConfig } from "@/lib/site-config";
 
@@ -7,7 +8,7 @@ export function Pricing() {
   return (
     <section
       id="pricing"
-      className="border-t border-line bg-paper py-16 md:py-24"
+      className="scroll-mt-20 border-t border-line bg-paper py-16 md:py-24"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
@@ -51,21 +52,25 @@ export function Pricing() {
                   </li>
                 ))}
               </ul>
-              <Button
-                render={
-                  <a
-                    href={siteConfig.whatsappLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  />
-                }
-                variant={tier.featured ? "default" : "outline"}
-                className={`mt-6 rounded-full active:scale-[0.98] ${
-                  tier.featured ? "bg-indigo text-white hover:bg-indigo/90" : ""
-                }`}
+              <a
+                href={siteConfig.whatsappLink}
+                target="_blank"
+                rel="noopener noreferrer"
+                className={cn(
+                  buttonVariants({
+                    variant: tier.featured ? "default" : "outline",
+                  }),
+                  "mt-6 rounded-full active:scale-[0.98]",
+                  tier.featured
+                    ? "bg-indigo text-white hover:bg-indigo/90"
+                    : // Override the outline variant's shared `hover:bg-muted
+                      // hover:text-foreground`: our --muted is a dark slate used for
+                      // secondary text, so that default fill fails contrast here.
+                      "hover:bg-indigo/5 hover:text-ink"
+                )}
               >
                 Chat on WhatsApp
-              </Button>
+              </a>
             </div>
           ))}
         </div>

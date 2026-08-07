@@ -4,7 +4,11 @@ const isDev = process.env.NODE_ENV === "development";
 
 const csp = [
   "default-src 'self'",
-  `script-src 'self'${isDev ? " 'unsafe-eval'" : ""}`,
+  // 'unsafe-inline' is required: Next.js emits inline <script> blocks (RSC flight
+  // data) that React needs to hydrate. Same reasoning as style-src below - this is
+  // a static site with no user-generated content and no third-party scripts.
+  `script-src 'self' 'unsafe-inline'${isDev ? " 'unsafe-eval'" : ""}`,
+  // Tailwind/Next inject inline styles; no user-generated content to inject into.
   "style-src 'self' 'unsafe-inline'",
   "img-src 'self' data:",
   "font-src 'self'",

@@ -13,6 +13,10 @@ describe("siteConfig", () => {
     );
   });
 
+  it("exposes the canonical site URL", () => {
+    expect(siteConfig.url).toBe("https://perfectcomputers.com.ng");
+  });
+
   it("exposes the contact email", () => {
     expect(siteConfig.email).toBe("ifeanyiokoloma@gmail.com");
   });

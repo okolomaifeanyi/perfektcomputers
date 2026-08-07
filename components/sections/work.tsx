@@ -20,7 +20,12 @@ export function Work() {
                 study.featured ? "sm:col-span-2" : ""
               }`}
             >
-              <div className="relative aspect-[2/1] w-full bg-paper">
+              <div
+                className="relative w-full bg-paper"
+                style={{
+                  aspectRatio: `${study.imageWidth} / ${study.imageHeight}`,
+                }}
+              >
                 <Image
                   src={study.imageSrc}
                   alt={study.imageAlt}

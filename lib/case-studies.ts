@@ -8,6 +8,10 @@ export interface CaseStudy {
   techStack: string[];
   imageSrc: string;
   imageAlt: string;
+  /** Natural pixel dimensions of imageSrc, so the card can size its frame to
+   * exactly match the image's aspect ratio instead of leaving letterbox gaps. */
+  imageWidth: number;
+  imageHeight: number;
   featured?: boolean;
 }
 
@@ -24,6 +28,8 @@ export const caseStudies: CaseStudy[] = [
     techStack: ["React Native", "Next.js", "Node.js"],
     imageSrc: "/case-studies/cometake.png",
     imageAlt: "Cometake storefront homepage with featured product carousel",
+    imageWidth: 1310,
+    imageHeight: 455,
   },
   {
     id: "idikarh-properties",
@@ -38,6 +44,8 @@ export const caseStudies: CaseStudy[] = [
     techStack: ["Next.js", "Tailwind CSS"],
     imageSrc: "/case-studies/idikarh-properties.svg",
     imageAlt: "Placeholder cover image for the Idikarh Properties case study",
+    imageWidth: 1200,
+    imageHeight: 900,
   },
   {
     id: "ijsr",
@@ -52,6 +60,8 @@ export const caseStudies: CaseStudy[] = [
     imageSrc: "/case-studies/ijsr.png",
     imageAlt:
       "International Journal of Spectrum Research homepage with journal title and mission statement",
+    imageWidth: 1310,
+    imageHeight: 565,
   },
   {
     id: "savannah-spot",
@@ -65,6 +75,8 @@ export const caseStudies: CaseStudy[] = [
     techStack: ["React Native", "Node.js", "PostgreSQL"],
     imageSrc: "/case-studies/savannah-spot.svg",
     imageAlt: "Placeholder cover image for the Savannah Spot case study",
+    imageWidth: 1200,
+    imageHeight: 900,
     featured: true,
   },
   {
@@ -79,6 +91,8 @@ export const caseStudies: CaseStudy[] = [
     techStack: ["Next.js", "WebSockets", "Node.js"],
     imageSrc: "/case-studies/yunivax-sports.svg",
     imageAlt: "Placeholder cover image for the Yunivax Sports case study",
+    imageWidth: 1200,
+    imageHeight: 900,
     featured: true,
   },
   {
@@ -94,5 +108,7 @@ export const caseStudies: CaseStudy[] = [
     imageSrc: "/case-studies/marketplace.png",
     imageAlt:
       "Perfekt Mart marketplace homepage with category grid and bill payment promo",
+    imageWidth: 1310,
+    imageHeight: 665,
   },
 ];

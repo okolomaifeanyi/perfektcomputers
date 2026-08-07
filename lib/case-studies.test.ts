@@ -16,6 +16,8 @@ describe("caseStudies", () => {
       expect(study.techStack.length).toBeGreaterThan(0);
       expect(study.imageSrc).toMatch(/^\/case-studies\//);
       expect(study.imageAlt).toBeTruthy();
+      expect(study.imageWidth).toBeGreaterThan(0);
+      expect(study.imageHeight).toBeGreaterThan(0);
     }
   });
 

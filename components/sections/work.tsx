@@ -20,13 +20,7 @@ export function Work() {
                 study.featured ? "sm:col-span-2" : ""
               }`}
             >
-              <div
-                className={`relative w-full ${
-                  study.featured
-                    ? "aspect-[4/3] sm:aspect-[8/3]"
-                    : "aspect-[4/3]"
-                }`}
-              >
+              <div className="relative aspect-[2/1] w-full bg-paper">
                 <Image
                   src={study.imageSrc}
                   alt={study.imageAlt}
@@ -36,7 +30,7 @@ export function Work() {
                       ? "(min-width: 1024px) 66vw, 100vw"
                       : "(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
                   }
-                  className="object-cover"
+                  className="object-contain"
                 />
               </div>
               <div className="flex flex-1 flex-col p-6">

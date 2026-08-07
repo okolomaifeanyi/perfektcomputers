@@ -10,7 +10,7 @@ export function Contact() {
     >
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-0 -z-10 h-72 w-72 -translate-x-1/2 -translate-y-1/3 rounded-full bg-indigo/20 blur-3xl"
+        className="pointer-events-none absolute left-1/2 top-0 -z-10 h-72 w-72 -translate-x-1/2 -translate-y-1/3 rounded-full bg-gold/20 blur-3xl"
       />
       <div className="mx-auto max-w-7xl px-4 text-center sm:px-6 lg:px-8">
         <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl">
@@ -33,7 +33,7 @@ export function Contact() {
           </a>
           <a
             href={`mailto:${siteConfig.email}`}
-            className="rounded-md text-sm text-white/70 underline underline-offset-4 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo/60"
+            className="rounded-md text-sm text-white/70 underline underline-offset-4 transition-colors hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold/60"
           >
             {siteConfig.email}
           </a>

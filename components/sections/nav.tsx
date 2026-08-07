@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/site-config";
@@ -14,16 +15,23 @@ export function Nav() {
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <a
           href="#top"
-          className="rounded-md text-lg font-semibold tracking-tight text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo/60"
+          className="rounded-full focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-deep/60"
         >
-          {siteConfig.name}
+          <Image
+            src="/logo.png"
+            alt={siteConfig.name}
+            width={823}
+            height={815}
+            priority
+            className="h-11 w-11 object-contain"
+          />
         </a>
         <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
           {navLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="rounded-md text-sm font-medium text-muted transition-colors hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-indigo/60"
+              className="rounded-md text-sm font-medium text-muted transition-colors hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-deep/60"
             >
               {link.label}
             </a>

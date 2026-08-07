@@ -4,7 +4,14 @@
 :root {
   --paper: #f6f7f9;
   --ink: #0e1524;
-  --indigo: #3854e6;
+  /* Brand gold, drawn from logo.png's badge ring. Two shades because a
+   * bright gold fails WCAG text contrast on light backgrounds (1.96:1) -
+   * see docs/superpowers/specs/2026-08-07-gold-rebrand-contrast.md for the
+   * computed ratios. --gold is for fills/tints/borders where dark ink or a
+   * dark background sits underneath; --gold-deep is for anything rendered
+   * as text or a focus ring directly on --paper/white (4.5:1+ / 3:1+). */
+  --gold: #d4af37;
+  --gold-deep: #8a6a1d;
   --signal: #25d366;
   --muted: #5b6472;
   --line: #e3e6ec;
@@ -14,23 +21,24 @@
 @theme inline {
   --color-paper: var(--paper);
   --color-ink: var(--ink);
-  --color-indigo: var(--indigo);
+  --color-gold: var(--gold);
+  --color-gold-deep: var(--gold-deep);
   --color-signal: var(--signal);
   --color-muted: var(--muted);
   --color-line: var(--line);
 
   --color-background: var(--paper);
   --color-foreground: var(--ink);
-  --color-primary: var(--indigo);
-  --color-primary-foreground: #ffffff;
+  --color-primary: var(--gold);
+  --color-primary-foreground: var(--ink);
   --color-secondary: var(--paper);
   --color-secondary-foreground: var(--ink);
   --color-muted-foreground: var(--muted);
-  --color-accent: var(--indigo);
-  --color-accent-foreground: #ffffff;
+  --color-accent: var(--gold);
+  --color-accent-foreground: var(--ink);
   --color-border: var(--line);
   --color-input: var(--line);
-  --color-ring: var(--indigo);
+  --color-ring: var(--gold-deep);
   --color-card: #ffffff;
   --color-card-foreground: var(--ink);
   --color-destructive: #dc2626;

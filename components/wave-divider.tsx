@@ -11,9 +11,9 @@ export function WaveDivider() {
       >
         <defs>
           <linearGradient id="wave-gradient" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stopColor="#3854e6" />
-            <stop offset="50%" stopColor="#25d366" />
-            <stop offset="100%" stopColor="#3854e6" />
+            <stop offset="0%" stopColor="#8a6a1d" />
+            <stop offset="50%" stopColor="#d4af37" />
+            <stop offset="100%" stopColor="#8a6a1d" />
           </linearGradient>
         </defs>
         <path

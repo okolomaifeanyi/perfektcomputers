@@ -36,7 +36,7 @@ export function Hero() {
         <div className="relative isolate flex justify-center md:justify-end">
           <div
             aria-hidden="true"
-            className="pointer-events-none absolute inset-0 -z-10 m-auto h-64 w-64 rounded-full bg-indigo/10 blur-3xl md:h-80 md:w-80"
+            className="pointer-events-none absolute inset-0 -z-10 m-auto h-64 w-64 rounded-full bg-gold/20 blur-3xl md:h-80 md:w-80"
           />
           <div className="animate-fade-in-up w-full max-w-sm [animation-delay:360ms] md:max-w-md">
             <WhatsappMockup />

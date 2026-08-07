@@ -6,11 +6,11 @@ import "./globals.css";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  title: "Perfect Computers | Websites & Apps for Nigerian Businesses",
+  title: `${siteConfig.name} | Websites & Apps for Nigerian Businesses`,
   description:
     "Full-stack web and mobile developer building business websites, online stores, and apps for Nigerian small businesses, with Paystack and VTU integration experience.",
   openGraph: {
-    title: "Perfect Computers",
+    title: siteConfig.name,
     description:
       "Websites and apps that get your business found, and paid. Chat on WhatsApp for a fixed quote.",
     url: siteConfig.url,
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Perfect Computers",
+    title: siteConfig.name,
     description: "Websites and apps that get your business found, and paid.",
   },
 };

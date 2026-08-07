@@ -45,10 +45,10 @@ export function Process() {
           {steps.map((step, index) => (
             <li key={step.number}>
               <div className="flex items-center gap-4">
-                <span className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-indigo/10 font-mono text-lg font-semibold text-indigo">
+                <span className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold/10 font-mono text-lg font-semibold text-gold-deep">
                   <span
                     aria-hidden="true"
-                    className={`absolute inset-0 rounded-full bg-indigo/25 opacity-0 ${stepPulseClasses[index]}`}
+                    className={`absolute inset-0 rounded-full bg-gold/25 opacity-0 ${stepPulseClasses[index]}`}
                   />
                   <span className="relative">{step.number}</span>
                 </span>

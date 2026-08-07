@@ -1,4 +1,5 @@
 import { Check } from "lucide-react";
+import { siteConfig } from "@/lib/site-config";
 
 export function WhatsappMockup() {
   return (
@@ -11,7 +12,7 @@ export function WhatsappMockup() {
           PC
         </span>
         <div>
-          <p className="text-sm font-semibold text-ink">Perfect Computers</p>
+          <p className="text-sm font-semibold text-ink">{siteConfig.name}</p>
           <p className="text-xs text-muted">Typically replies within an hour</p>
         </div>
       </div>

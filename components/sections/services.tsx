@@ -43,13 +43,13 @@ export function Services() {
           {standardServices.map((service) => (
             <div
               key={service.name}
-              className={`reveal-on-scroll group rounded-xl bg-paper p-6 shadow-[0_1px_2px_rgba(14,21,36,0.05)] hover:-translate-y-1.5 hover:bg-white hover:shadow-[0_12px_32px_rgba(56,84,230,0.14)] ${cardTransition}`}
+              className={`reveal-on-scroll group rounded-xl bg-paper p-6 shadow-[0_1px_2px_rgba(14,21,36,0.05)] hover:-translate-y-1.5 hover:bg-white hover:shadow-[0_12px_32px_rgba(138,106,29,0.16)] ${cardTransition}`}
             >
               <span
-                className={`flex h-10 w-10 items-center justify-center rounded-lg bg-indigo/10 group-hover:scale-110 ${cardTransition}`}
+                className={`flex h-10 w-10 items-center justify-center rounded-lg bg-gold/10 group-hover:scale-110 ${cardTransition}`}
               >
                 <service.icon
-                  className="h-5 w-5 text-indigo"
+                  className="h-5 w-5 text-gold-deep"
                   strokeWidth={1.5}
                 />
               </span>
@@ -62,12 +62,12 @@ export function Services() {
         </div>
         <div className="reveal-stagger mt-4 grid gap-4 sm:grid-cols-3">
           <div
-            className={`reveal-on-scroll group rounded-xl bg-paper p-6 shadow-[0_1px_2px_rgba(14,21,36,0.05)] hover:-translate-y-1.5 hover:bg-white hover:shadow-[0_12px_32px_rgba(56,84,230,0.14)] sm:col-span-2 ${cardTransition}`}
+            className={`reveal-on-scroll group rounded-xl bg-paper p-6 shadow-[0_1px_2px_rgba(14,21,36,0.05)] hover:-translate-y-1.5 hover:bg-white hover:shadow-[0_12px_32px_rgba(138,106,29,0.16)] sm:col-span-2 ${cardTransition}`}
           >
             <span
-              className={`flex h-10 w-10 items-center justify-center rounded-lg bg-indigo/10 group-hover:scale-110 ${cardTransition}`}
+              className={`flex h-10 w-10 items-center justify-center rounded-lg bg-gold/10 group-hover:scale-110 ${cardTransition}`}
             >
-              <Wallet className="h-5 w-5 text-indigo" strokeWidth={1.5} />
+              <Wallet className="h-5 w-5 text-gold-deep" strokeWidth={1.5} />
             </span>
             <h3 className="mt-4 text-base font-semibold text-ink">
               Payments &amp; Wallets
@@ -78,12 +78,12 @@ export function Services() {
             </p>
           </div>
           <div
-            className={`reveal-on-scroll group rounded-xl border border-indigo/30 bg-indigo/5 p-6 hover:-translate-y-1.5 hover:shadow-[0_12px_32px_rgba(56,84,230,0.18)] ${cardTransition}`}
+            className={`reveal-on-scroll group rounded-xl border border-gold-deep/30 bg-gold/5 p-6 hover:-translate-y-1.5 hover:shadow-[0_12px_32px_rgba(138,106,29,0.20)] ${cardTransition}`}
           >
             <span
-              className={`flex h-10 w-10 items-center justify-center rounded-lg bg-indigo/10 group-hover:scale-110 ${cardTransition}`}
+              className={`flex h-10 w-10 items-center justify-center rounded-lg bg-gold/10 group-hover:scale-110 ${cardTransition}`}
             >
-              <RefreshCw className="h-5 w-5 text-indigo" strokeWidth={1.5} />
+              <RefreshCw className="h-5 w-5 text-gold-deep" strokeWidth={1.5} />
             </span>
             <h3 className="mt-4 text-base font-semibold text-ink">Care Plan</h3>
             <p className="mt-2 text-sm text-muted">

@@ -21,12 +21,12 @@ export function Pricing() {
               key={tier.id}
               className={`reveal-on-scroll flex flex-col rounded-xl border p-6 transition-all duration-500 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 ${
                 tier.featured
-                  ? "border-indigo bg-white shadow-[0_1px_2px_rgba(14,21,36,0.04),0_16px_40px_rgba(56,84,230,0.12)] hover:shadow-[0_1px_2px_rgba(14,21,36,0.04),0_28px_56px_rgba(56,84,230,0.22)] sm:-mt-4 sm:mb-4"
-                  : "border-line bg-white shadow-[0_1px_2px_rgba(14,21,36,0.04)] hover:border-indigo/30 hover:shadow-[0_16px_36px_rgba(56,84,230,0.14)]"
+                  ? "border-gold-deep bg-white shadow-[0_1px_2px_rgba(14,21,36,0.04),0_16px_40px_rgba(138,106,29,0.14)] hover:shadow-[0_1px_2px_rgba(14,21,36,0.04),0_28px_56px_rgba(138,106,29,0.24)] sm:-mt-4 sm:mb-4"
+                  : "border-line bg-white shadow-[0_1px_2px_rgba(14,21,36,0.04)] hover:border-gold-deep/30 hover:shadow-[0_16px_36px_rgba(138,106,29,0.16)]"
               }`}
             >
               {tier.featured ? (
-                <span className="mb-3 inline-flex w-fit items-center rounded-md bg-indigo/10 px-2 py-1 text-xs font-medium text-indigo">
+                <span className="mb-3 inline-flex w-fit items-center rounded-md bg-gold/10 px-2 py-1 text-xs font-medium text-gold-deep">
                   Most popular
                 </span>
               ) : null}
@@ -42,7 +42,7 @@ export function Pricing() {
                     className="flex items-start gap-2 text-sm text-ink"
                   >
                     <Check
-                      className="mt-0.5 h-4 w-4 shrink-0 text-indigo"
+                      className="mt-0.5 h-4 w-4 shrink-0 text-gold-deep"
                       strokeWidth={2}
                     />
                     {feature}
@@ -59,11 +59,14 @@ export function Pricing() {
                   }),
                   "mt-6 rounded-full active:scale-[0.98]",
                   tier.featured
-                    ? "bg-indigo text-white hover:bg-indigo/90"
+                    ? // Bright gold vs white text measures 2.1:1 (fails AA) - ink on
+                      // gold measures 8.67:1. See docs/superpowers/specs/2026-08-07-
+                      // gold-rebrand-contrast.md.
+                      "bg-gold text-ink hover:bg-gold/90"
                     : // Override the outline variant's shared `hover:bg-muted
                       // hover:text-foreground`: our --muted is a dark slate used for
                       // secondary text, so that default fill fails contrast here.
-                      "hover:bg-indigo/5 hover:text-ink"
+                      "hover:bg-gold/5 hover:text-ink"
                 )}
               >
                 Chat on WhatsApp

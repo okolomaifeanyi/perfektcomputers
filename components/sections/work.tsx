@@ -16,7 +16,7 @@ export function Work() {
           {caseStudies.map((study) => (
             <article
               key={study.id}
-              className={`reveal-on-scroll group flex flex-col overflow-hidden rounded-xl border border-line bg-white shadow-[0_1px_2px_rgba(14,21,36,0.04)] transition-all duration-500 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:border-indigo/30 hover:shadow-[0_16px_36px_rgba(56,84,230,0.14)] ${
+              className={`reveal-on-scroll group flex flex-col overflow-hidden rounded-xl border border-line bg-white shadow-[0_1px_2px_rgba(14,21,36,0.04)] transition-all duration-500 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:border-gold-deep/30 hover:shadow-[0_16px_36px_rgba(138,106,29,0.16)] ${
                 study.featured ? "sm:col-span-2" : ""
               }`}
             >
@@ -51,7 +51,7 @@ export function Work() {
                 <p className="mt-2 text-sm font-medium text-ink">
                   {study.whatWasBuilt}
                 </p>
-                <p className="mt-3 flex items-start gap-1.5 text-sm text-indigo">
+                <p className="mt-3 flex items-start gap-1.5 text-sm text-gold-deep">
                   <Sparkles
                     className="mt-0.5 h-3.5 w-3.5 shrink-0"
                     strokeWidth={1.5}

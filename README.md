@@ -1,6 +1,6 @@
-# Perfect Computers
+# Perfekt Computers
 
-Marketing site for Perfect Computers (perfectcomputers.com.ng), a single
+Marketing site for Perfekt Computers (perfektcomputers.com.ng), a single
 page that turns Nigerian small business owners into a WhatsApp conversation.
 
 ## Stack
@@ -32,7 +32,7 @@ npm run lint
 
 - [ ] Replace placeholder pricing figures in `lib/pricing.ts` (`isPlaceholder: true`) with real ₦ rates.
 - [ ] Replace placeholder case-study images in `public/case-studies/` with real screenshots, keeping the same filenames referenced in `lib/case-studies.ts`.
-- [ ] Confirm `siteUrl` in `app/layout.tsx`, `app/sitemap.ts`, and `app/robots.ts` matches the production domain.
+- [ ] Confirm `siteConfig.url` in `lib/site-config.ts` matches the production domain (it's the single source of truth for `app/layout.tsx`, `app/sitemap.ts`, and `app/robots.ts`).
 
 ## Deploy (Vercel)
 
@@ -40,4 +40,4 @@ npm run lint
 2. Import the repo at https://vercel.com/new.
 3. No environment variables are required. The site is fully static content, no backend or database.
 4. Vercel auto-detects Next.js; deploy with default settings.
-5. Point the `perfectcomputers.com.ng` domain at the Vercel project under Project Settings → Domains.
+5. Point the `perfektcomputers.com.ng` domain at the Vercel project under Project Settings → Domains.

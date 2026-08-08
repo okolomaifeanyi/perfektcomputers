@@ -61,28 +61,12 @@ export const caseStudies: CaseStudy[] = [
     standoutDetail:
       "Every listing is hand-picked rather than pulled from an open directory, so what's live is a small, curated set worth actually visiting, not exhaustive clutter.",
     techStack: ["Next.js", "Node.js", "PostgreSQL"],
-    imageSrc: "/case-studies/savannah-spot.svg",
-    imageAlt: "Placeholder cover image for the Savannah Spot case study",
-    imageWidth: 1200,
+    imageSrc: "/case-studies/savannah-spot.png",
+    imageAlt:
+      'SavannaSpot homepage: "Experience Awka like never before" over a night skyline, with search and category sidebar',
+    imageWidth: 1310,
     imageHeight: 900,
     url: "https://savannaspot.com",
-    featured: true,
-  },
-  {
-    id: "yunivax-sports",
-    title: "Yunivax Sports",
-    problem:
-      "Football fans wanted live scores and match chat in one place, updating in real time instead of refreshing a page.",
-    whatWasBuilt:
-      "A real-time football platform combining live match scores with in-match chat, so fans follow and discuss a game as it happens.",
-    standoutDetail:
-      "Scores and chat messages both update over the same real-time connection, typically under a second behind the actual play.",
-    techStack: ["Next.js", "WebSockets", "Node.js"],
-    imageSrc: "/case-studies/yunivax-sports.svg",
-    imageAlt: "Placeholder cover image for the Yunivax Sports case study",
-    imageWidth: 1200,
-    imageHeight: 900,
-    url: "https://yunivax.netlify.app",
     featured: true,
   },
   {
@@ -112,10 +96,12 @@ export const caseStudies: CaseStudy[] = [
     standoutDetail:
       "Highlight clips pull in automatically as matches finish, so fans don't have to go hunting for them after a big game.",
     techStack: ["Next.js", "TheSportsDB API", "Scorebat"],
-    imageSrc: "/case-studies/perfektscore.svg",
-    imageAlt: "Placeholder cover image for the PerfektScore case study",
-    imageWidth: 1200,
+    imageSrc: "/case-studies/perfektscore.png",
+    imageAlt:
+      "PerfektScore dashboard showing today's fixtures, live match count, and league sidebar",
+    imageWidth: 1310,
     imageHeight: 900,
     url: "https://perfektscore.vercel.app",
+    featured: true,
   },
 ];

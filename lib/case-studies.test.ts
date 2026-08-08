@@ -2,10 +2,11 @@ import { describe, it, expect } from "vitest";
 import { caseStudies } from "@/lib/case-studies";
 
 describe("caseStudies", () => {
-  it("has exactly 6 case studies, Idikarh Properties removed and PerfektScore added", () => {
-    expect(caseStudies).toHaveLength(6);
+  it("has exactly 5 case studies (Idikarh Properties and Yunivax Sports removed, PerfektScore added)", () => {
+    expect(caseStudies).toHaveLength(5);
     const ids = caseStudies.map((s) => s.id);
     expect(ids).not.toContain("idikarh-properties");
+    expect(ids).not.toContain("yunivax-sports");
     expect(ids).toContain("perfektscore");
   });
 
@@ -33,7 +34,6 @@ describe("caseStudies", () => {
     expect(byId["ijsr"]).toBe("https://ijsrjournal.com");
     expect(byId["marketplace"]).toBe("https://perfektmart.com.ng");
     expect(byId["savannah-spot"]).toBe("https://savannaspot.com");
-    expect(byId["yunivax-sports"]).toBe("https://yunivax.netlify.app");
     expect(byId["perfektscore"]).toBe("https://perfektscore.vercel.app");
   });
 
@@ -41,8 +41,8 @@ describe("caseStudies", () => {
     const featured = caseStudies.filter((s) => s.featured);
     expect(featured).toHaveLength(2);
     expect(featured.map((s) => s.id).sort()).toEqual([
+      "perfektscore",
       "savannah-spot",
-      "yunivax-sports",
     ]);
   });
 });

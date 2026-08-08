@@ -10,7 +10,7 @@ export function Work() {
           Work
         </h2>
         <p className="mt-3 max-w-[60ch] text-pretty text-sm text-muted">
-          Six shipped projects, from online stores to real-time platforms.
+          Five shipped projects, from online stores to real-time platforms.
         </p>
         <div className="reveal-stagger mt-10 grid grid-flow-row-dense gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {caseStudies.map((study) => (

@@ -26,7 +26,7 @@ export function Hero() {
               rel="noopener noreferrer"
               className={cn(
                 buttonVariants(),
-                "h-12 rounded-full bg-signal px-8 text-base text-ink hover:bg-signal/90 active:scale-[0.98]"
+                "h-12 rounded-full bg-gold px-8 text-base text-ink hover:bg-gold/90 active:scale-[0.98]"
               )}
             >
               Chat on WhatsApp

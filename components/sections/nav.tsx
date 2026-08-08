@@ -43,7 +43,7 @@ export function Nav() {
           rel="noopener noreferrer"
           className={cn(
             buttonVariants(),
-            "rounded-full bg-signal text-ink hover:bg-signal/90 active:scale-[0.98]"
+            "rounded-full bg-gold text-ink hover:bg-gold/90 active:scale-[0.98]"
           )}
         >
           Chat on WhatsApp

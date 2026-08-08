@@ -12,6 +12,8 @@ export interface CaseStudy {
    * exactly match the image's aspect ratio instead of leaving letterbox gaps. */
   imageWidth: number;
   imageHeight: number;
+  /** Live project URL, shown as a "Visit site" link when present. */
+  url?: string;
   featured?: boolean;
 }
 
@@ -25,27 +27,12 @@ export const caseStudies: CaseStudy[] = [
       "A mobile and web e-commerce app sharing one backend, so product listings, orders, and inventory stay in sync everywhere customers shop.",
     standoutDetail:
       "Customers can start browsing on the website and finish checkout in the app without losing their cart.",
-    techStack: ["React Native", "Next.js", "Node.js"],
+    techStack: ["Flutter", "Next.js", "Node.js"],
     imageSrc: "/case-studies/cometake.png",
     imageAlt: "Cometake storefront homepage with featured product carousel",
     imageWidth: 1310,
     imageHeight: 455,
-  },
-  {
-    id: "idikarh-properties",
-    title: "Idikarh Properties",
-    tagline: "Real Estate, Real Easy",
-    problem:
-      "Idikarh Properties needed a brand presence that made finding and enquiring about a listing feel effortless, matching their positioning.",
-    whatWasBuilt:
-      "A real estate brand site built around a browsable listings grid, property detail pages, and a direct enquiry path.",
-    standoutDetail:
-      "Every listing page is built to load fast on mobile data, where most property searches in Nigeria actually happen.",
-    techStack: ["Next.js", "Tailwind CSS"],
-    imageSrc: "/case-studies/idikarh-properties.svg",
-    imageAlt: "Placeholder cover image for the Idikarh Properties case study",
-    imageWidth: 1200,
-    imageHeight: 900,
+    url: "https://cometake.net",
   },
   {
     id: "ijsr",
@@ -56,27 +43,29 @@ export const caseStudies: CaseStudy[] = [
       "An academic publishing platform with author submissions, full-text search and filtering, and a searchable archive of past issues.",
     standoutDetail:
       "Search and filtering were built to handle years of back issues without the archive page slowing down.",
-    techStack: ["Next.js", "PostgreSQL", "Full-text search"],
+    techStack: ["Next.js", "Firebase", "Full-text search"],
     imageSrc: "/case-studies/ijsr.png",
     imageAlt:
       "International Journal of Spectrum Research homepage with journal title and mission statement",
     imageWidth: 1310,
     imageHeight: 565,
+    url: "https://ijsrjournal.com",
   },
   {
     id: "savannah-spot",
     title: "Savannah Spot",
     problem:
-      "Local discovery in Nigerian cities is scattered across group chats and word of mouth. Savannah Spot needed a single place to browse hotels, gyms, and eateries.",
+      "Discerning travelers in Nigerian cities had no curated way to find premium hotels, restaurants, and experiences, just directory clutter and word of mouth.",
     whatWasBuilt:
-      "A local discovery app with a premium glassmorphism interface, covering hotels, gyms, and eateries in one browsable, searchable experience.",
+      "A curated hospitality discovery platform covering hotels, restaurants, nightlife, and wellness venues, starting with Awka and built to expand city by city, with an interactive map and handpicked recommendations instead of exhaustive listings.",
     standoutDetail:
-      "The interface uses layered glass panels over real venue photography, a visual treatment few local discovery apps in the market use.",
-    techStack: ["React Native", "Node.js", "PostgreSQL"],
+      "Every listing is hand-picked rather than pulled from an open directory, so what's live is a small, curated set worth actually visiting, not exhaustive clutter.",
+    techStack: ["Next.js", "Node.js", "PostgreSQL"],
     imageSrc: "/case-studies/savannah-spot.svg",
     imageAlt: "Placeholder cover image for the Savannah Spot case study",
     imageWidth: 1200,
     imageHeight: 900,
+    url: "https://savannaspot.com",
     featured: true,
   },
   {
@@ -93,6 +82,7 @@ export const caseStudies: CaseStudy[] = [
     imageAlt: "Placeholder cover image for the Yunivax Sports case study",
     imageWidth: 1200,
     imageHeight: 900,
+    url: "https://yunivax.netlify.app",
     featured: true,
   },
   {
@@ -110,5 +100,22 @@ export const caseStudies: CaseStudy[] = [
       "Perfekt Mart marketplace homepage with category grid and bill payment promo",
     imageWidth: 1310,
     imageHeight: 665,
+    url: "https://perfektmart.com.ng",
+  },
+  {
+    id: "perfektscore",
+    title: "PerfektScore",
+    problem:
+      "Football fans juggle several different apps and sites just to keep track of fixtures, live scores, and highlights across the leagues they follow.",
+    whatWasBuilt:
+      "A football tracking platform covering 23 leagues and 6 major competitions, with live fixtures, results, team pages, and highlight clips in one place.",
+    standoutDetail:
+      "Highlight clips pull in automatically as matches finish, so fans don't have to go hunting for them after a big game.",
+    techStack: ["Next.js", "TheSportsDB API", "Scorebat"],
+    imageSrc: "/case-studies/perfektscore.svg",
+    imageAlt: "Placeholder cover image for the PerfektScore case study",
+    imageWidth: 1200,
+    imageHeight: 900,
+    url: "https://perfektscore.vercel.app",
   },
 ];

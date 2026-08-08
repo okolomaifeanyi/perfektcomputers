@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { Sparkles } from "lucide-react";
+import { ExternalLink, Sparkles } from "lucide-react";
 import { caseStudies } from "@/lib/case-studies";
 
 export function Work() {
@@ -58,19 +58,32 @@ export function Work() {
                   />
                   {study.standoutDetail}
                 </p>
-                <ul
-                  className="mt-auto flex flex-wrap gap-2 pt-4 font-mono text-xs text-muted"
-                  aria-label={`${study.title} tech stack`}
-                >
-                  {study.techStack.map((tech) => (
-                    <li
-                      key={tech}
-                      className="rounded-md border border-line px-2 py-1"
+                <div className="mt-auto flex flex-col gap-3 pt-4">
+                  {study.url ? (
+                    <a
+                      href={study.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex w-fit items-center gap-1 rounded-md text-sm font-medium text-gold-deep underline decoration-gold-deep/40 underline-offset-4 transition-colors hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-deep/60"
                     >
-                      {tech}
-                    </li>
-                  ))}
-                </ul>
+                      Visit site
+                      <ExternalLink className="h-3.5 w-3.5" strokeWidth={1.5} />
+                    </a>
+                  ) : null}
+                  <ul
+                    className="flex flex-wrap gap-2 font-mono text-xs text-muted"
+                    aria-label={`${study.title} tech stack`}
+                  >
+                    {study.techStack.map((tech) => (
+                      <li
+                        key={tech}
+                        className="rounded-md border border-line px-2 py-1"
+                      >
+                        {tech}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             </article>
           ))}

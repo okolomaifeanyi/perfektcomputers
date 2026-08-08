@@ -8,7 +8,7 @@ export function Pricing() {
   return (
     <section id="pricing" className="scroll-mt-20 bg-paper py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+        <h2 className="text-3xl font-semibold tracking-tight text-fg sm:text-4xl">
           Pricing
         </h2>
         <p className="mt-3 max-w-[60ch] text-sm text-muted">
@@ -21,8 +21,8 @@ export function Pricing() {
               key={tier.id}
               className={`reveal-on-scroll flex flex-col rounded-xl border p-6 transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-2 ${
                 tier.featured
-                  ? "border-gold-deep bg-white shadow-[0_1px_2px_rgba(14,21,36,0.04),0_16px_40px_rgba(138,106,29,0.14)] hover:shadow-[0_1px_2px_rgba(14,21,36,0.04),0_28px_56px_rgba(138,106,29,0.24)] sm:-mt-4 sm:mb-4"
-                  : "border-line bg-white shadow-[0_1px_2px_rgba(14,21,36,0.04)] hover:border-gold-deep/30 hover:shadow-[0_16px_36px_rgba(138,106,29,0.16)]"
+                  ? "border-gold-deep bg-surface shadow-[0_1px_2px_rgba(14,21,36,0.04),0_16px_40px_rgba(138,106,29,0.14)] hover:shadow-[0_1px_2px_rgba(14,21,36,0.04),0_28px_56px_rgba(138,106,29,0.24)] dark:shadow-none dark:hover:shadow-none sm:-mt-4 sm:mb-4"
+                  : "border-line bg-surface shadow-[0_1px_2px_rgba(14,21,36,0.04)] hover:border-gold-deep/30 hover:shadow-[0_16px_36px_rgba(138,106,29,0.16)] dark:shadow-none dark:hover:shadow-none"
               }`}
             >
               {tier.featured ? (
@@ -30,8 +30,8 @@ export function Pricing() {
                   Most popular
                 </span>
               ) : null}
-              <h3 className="text-lg font-semibold text-ink">{tier.name}</h3>
-              <p className="mt-2 font-mono text-3xl font-semibold text-ink">
+              <h3 className="text-lg font-semibold text-fg">{tier.name}</h3>
+              <p className="mt-2 font-mono text-3xl font-semibold text-fg">
                 {tier.price}
               </p>
               <p className="mt-2 text-sm text-muted">{tier.description}</p>
@@ -39,7 +39,7 @@ export function Pricing() {
                 {tier.features.map((feature) => (
                   <li
                     key={feature}
-                    className="flex items-start gap-2 text-sm text-ink"
+                    className="flex items-start gap-2 text-sm text-fg"
                   >
                     <Check
                       className="mt-0.5 h-4 w-4 shrink-0 text-gold-deep"
@@ -61,12 +61,19 @@ export function Pricing() {
                   tier.featured
                     ? // Bright gold vs white text measures 2.1:1 (fails AA) - ink on
                       // gold measures 8.67:1. See docs/superpowers/specs/2026-08-07-
-                      // gold-rebrand-contrast.md.
+                      // gold-rebrand-contrast.md. This is a solid, opaque fill, so
+                      // --ink (fixed, not theme-adaptive) is correct here in both
+                      // themes - see docs/superpowers/specs/2026-08-08-dark-mode-
+                      // contrast.md.
                       "bg-gold text-ink hover:bg-gold/90"
                     : // Override the outline variant's shared `hover:bg-muted
                       // hover:text-foreground`: our --muted is a dark slate used for
                       // secondary text, so that default fill fails contrast here.
-                      "hover:bg-gold/5 hover:text-ink"
+                      // hover:text-fg (not the fixed --ink): this is a translucent
+                      // wash over the ambient page background, not a solid fill, so
+                      // the text needs to track the page's adaptive foreground or it
+                      // goes dark-on-dark once the page itself turns dark.
+                      "hover:bg-gold/5 hover:text-fg"
                 )}
               >
                 Chat on WhatsApp

@@ -5,6 +5,7 @@ import {
   Smartphone,
   Wallet,
 } from "lucide-react";
+import { carePlanPrice } from "@/lib/pricing";
 
 const standardServices = [
   {
@@ -30,9 +31,9 @@ const cardTransition =
 
 export function Services() {
   return (
-    <section id="services" className="scroll-mt-20 bg-white py-16 md:py-24">
+    <section id="services" className="scroll-mt-20 bg-surface py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+        <h2 className="text-3xl font-semibold tracking-tight text-fg sm:text-4xl">
           Services
         </h2>
         <p className="mt-3 max-w-[60ch] text-pretty text-sm text-muted">
@@ -43,7 +44,7 @@ export function Services() {
           {standardServices.map((service) => (
             <div
               key={service.name}
-              className={`reveal-on-scroll group rounded-xl bg-paper p-6 shadow-[0_1px_2px_rgba(14,21,36,0.05)] hover:-translate-y-1.5 hover:bg-white hover:shadow-[0_12px_32px_rgba(138,106,29,0.16)] ${cardTransition}`}
+              className={`reveal-on-scroll group rounded-xl bg-paper p-6 shadow-[0_1px_2px_rgba(14,21,36,0.05)] hover:-translate-y-1.5 hover:bg-surface hover:shadow-[0_12px_32px_rgba(138,106,29,0.16)] dark:shadow-none dark:hover:shadow-none ${cardTransition}`}
             >
               <span
                 className={`flex h-10 w-10 items-center justify-center rounded-lg bg-gold/10 group-hover:scale-110 ${cardTransition}`}
@@ -53,7 +54,7 @@ export function Services() {
                   strokeWidth={1.5}
                 />
               </span>
-              <h3 className="mt-4 text-base font-semibold text-ink">
+              <h3 className="mt-4 text-base font-semibold text-fg">
                 {service.name}
               </h3>
               <p className="mt-2 text-sm text-muted">{service.description}</p>
@@ -62,14 +63,14 @@ export function Services() {
         </div>
         <div className="reveal-stagger mt-4 grid gap-4 sm:grid-cols-3">
           <div
-            className={`reveal-on-scroll group rounded-xl bg-paper p-6 shadow-[0_1px_2px_rgba(14,21,36,0.05)] hover:-translate-y-1.5 hover:bg-white hover:shadow-[0_12px_32px_rgba(138,106,29,0.16)] sm:col-span-2 ${cardTransition}`}
+            className={`reveal-on-scroll group rounded-xl bg-paper p-6 shadow-[0_1px_2px_rgba(14,21,36,0.05)] hover:-translate-y-1.5 hover:bg-surface hover:shadow-[0_12px_32px_rgba(138,106,29,0.16)] dark:shadow-none dark:hover:shadow-none sm:col-span-2 ${cardTransition}`}
           >
             <span
               className={`flex h-10 w-10 items-center justify-center rounded-lg bg-gold/10 group-hover:scale-110 ${cardTransition}`}
             >
               <Wallet className="h-5 w-5 text-gold-deep" strokeWidth={1.5} />
             </span>
-            <h3 className="mt-4 text-base font-semibold text-ink">
+            <h3 className="mt-4 text-base font-semibold text-fg">
               Payments &amp; Wallets
             </h3>
             <p className="mt-2 text-sm text-muted">
@@ -78,14 +79,19 @@ export function Services() {
             </p>
           </div>
           <div
-            className={`reveal-on-scroll group rounded-xl border border-gold-deep/30 bg-gold/5 p-6 hover:-translate-y-1.5 hover:shadow-[0_12px_32px_rgba(138,106,29,0.20)] ${cardTransition}`}
+            className={`reveal-on-scroll group rounded-xl border border-gold-deep/30 bg-gold/5 p-6 hover:-translate-y-1.5 hover:shadow-[0_12px_32px_rgba(138,106,29,0.20)] dark:shadow-none dark:hover:shadow-none ${cardTransition}`}
           >
             <span
               className={`flex h-10 w-10 items-center justify-center rounded-lg bg-gold/10 group-hover:scale-110 ${cardTransition}`}
             >
               <RefreshCw className="h-5 w-5 text-gold-deep" strokeWidth={1.5} />
             </span>
-            <h3 className="mt-4 text-base font-semibold text-ink">Care Plan</h3>
+            <div className="mt-4 flex items-baseline gap-2">
+              <h3 className="text-base font-semibold text-fg">Care Plan</h3>
+              <span className="font-mono text-sm text-gold-deep">
+                {carePlanPrice}
+              </span>
+            </div>
             <p className="mt-2 text-sm text-muted">
               A small monthly fee keeps your site updated, backed up, and
               supported.

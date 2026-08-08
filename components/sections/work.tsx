@@ -6,7 +6,7 @@ export function Work() {
   return (
     <section id="work" className="scroll-mt-20 bg-paper py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+        <h2 className="text-3xl font-semibold tracking-tight text-fg sm:text-4xl">
           Work
         </h2>
         <p className="mt-3 max-w-[60ch] text-pretty text-sm text-muted">
@@ -16,7 +16,7 @@ export function Work() {
           {caseStudies.map((study) => (
             <article
               key={study.id}
-              className={`reveal-on-scroll group flex flex-col overflow-hidden rounded-xl border border-line bg-white shadow-[0_1px_2px_rgba(14,21,36,0.04)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:border-gold-deep/30 hover:shadow-[0_16px_36px_rgba(138,106,29,0.16)] ${
+              className={`reveal-on-scroll group flex flex-col overflow-hidden rounded-xl border border-line bg-surface shadow-[0_1px_2px_rgba(14,21,36,0.04)] transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] hover:-translate-y-1.5 hover:border-gold-deep/30 hover:shadow-[0_16px_36px_rgba(138,106,29,0.16)] dark:shadow-none dark:hover:shadow-none ${
                 study.featured ? "sm:col-span-2" : ""
               }`}
             >
@@ -39,16 +39,14 @@ export function Work() {
                 />
               </div>
               <div className="flex flex-1 flex-col p-6">
-                <h3 className="text-lg font-semibold text-ink">
-                  {study.title}
-                </h3>
+                <h3 className="text-lg font-semibold text-fg">{study.title}</h3>
                 {study.tagline ? (
                   <p className="mt-1 text-sm italic text-muted">
                     {study.tagline}
                   </p>
                 ) : null}
                 <p className="mt-3 text-sm text-muted">{study.problem}</p>
-                <p className="mt-2 text-sm font-medium text-ink">
+                <p className="mt-2 text-sm font-medium text-fg">
                   {study.whatWasBuilt}
                 </p>
                 <p className="mt-3 flex items-start gap-1.5 text-sm text-gold-deep">
@@ -64,7 +62,7 @@ export function Work() {
                       href={study.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex w-fit items-center gap-1 rounded-md text-sm font-medium text-gold-deep underline decoration-gold-deep/40 underline-offset-4 transition-colors hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-deep/60"
+                      className="inline-flex w-fit items-center gap-1 rounded-md text-sm font-medium text-gold-deep underline decoration-gold-deep/40 underline-offset-4 transition-colors hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-deep/60"
                     >
                       Visit site
                       <ExternalLink className="h-3.5 w-3.5" strokeWidth={1.5} />

@@ -12,7 +12,7 @@ export function Hero() {
     >
       <div className="relative z-10 mx-auto max-w-7xl grid items-center gap-12 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
         <div>
-          <h1 className="animate-fade-in-up text-balance text-4xl font-semibold tracking-tight text-ink sm:text-5xl md:text-6xl">
+          <h1 className="animate-fade-in-up text-balance text-4xl font-semibold tracking-tight text-fg sm:text-5xl md:text-6xl">
             Websites &amp; Apps That Get Your Business Found, and Paid
           </h1>
           <p className="animate-fade-in-up mt-6 max-w-[46ch] text-pretty text-base text-muted [animation-delay:120ms] sm:text-lg">

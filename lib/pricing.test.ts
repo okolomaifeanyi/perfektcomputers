@@ -1,5 +1,11 @@
 import { describe, it, expect } from "vitest";
-import { pricingTiers } from "@/lib/pricing";
+import {
+  pricingTiers,
+  starterPrice,
+  standardPrice,
+  proPrice,
+  carePlanPrice,
+} from "@/lib/pricing";
 
 describe("pricingTiers", () => {
   it("has exactly 3 tiers: Starter, Standard, Pro", () => {
@@ -16,10 +22,22 @@ describe("pricingTiers", () => {
     expect(featured[0].id).toBe("standard");
   });
 
-  it("flags every price as a placeholder pending real rates", () => {
+  it("gives every tier a real, non-placeholder price and at least one feature", () => {
     for (const tier of pricingTiers) {
-      expect(tier.isPlaceholder).toBe(true);
+      expect(tier.price).toBeTruthy();
       expect(tier.features.length).toBeGreaterThan(0);
     }
+  });
+
+  it("uses the named price constants as the real, approved figures", () => {
+    expect(starterPrice).toBe("₦180,000");
+    expect(standardPrice).toBe("₦450,000");
+    expect(proPrice).toBe("From ₦950,000");
+    expect(carePlanPrice).toBe("₦25,000/mo");
+
+    const byId = Object.fromEntries(pricingTiers.map((t) => [t.id, t.price]));
+    expect(byId["starter"]).toBe(starterPrice);
+    expect(byId["standard"]).toBe(standardPrice);
+    expect(byId["pro"]).toBe(proPrice);
   });
 });

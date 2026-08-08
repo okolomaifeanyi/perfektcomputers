@@ -36,9 +36,9 @@ const stepPulseClasses = [
 
 export function Process() {
   return (
-    <section id="process" className="scroll-mt-20 bg-white py-16 md:py-24">
+    <section id="process" className="scroll-mt-20 bg-surface py-16 md:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-semibold tracking-tight text-ink sm:text-4xl">
+        <h2 className="text-3xl font-semibold tracking-tight text-fg sm:text-4xl">
           How it works
         </h2>
         <ol className="mt-10 grid gap-10 sm:grid-cols-4 sm:gap-8">
@@ -59,7 +59,7 @@ export function Process() {
                   />
                 ) : null}
               </div>
-              <h3 className="mt-4 text-base font-semibold text-ink">
+              <h3 className="mt-4 text-base font-semibold text-fg">
                 {step.title}
               </h3>
               <p className="mt-2 text-sm text-muted">{step.description}</p>

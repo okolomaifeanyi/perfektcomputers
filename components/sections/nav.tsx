@@ -31,7 +31,7 @@ export function Nav() {
             <a
               key={link.href}
               href={link.href}
-              className="rounded-md text-sm font-medium text-muted transition-colors hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-deep/60"
+              className="rounded-md text-sm font-medium text-muted transition-colors hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-deep/60"
             >
               {link.label}
             </a>

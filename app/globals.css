@@ -3,7 +3,15 @@
 
 :root {
   --paper: #f6f7f9;
+  --surface: #ffffff;
+  /* --ink is intentionally NOT theme-adaptive. It's used only where dark
+   * text sits on a solid light-accent fill (gold/signal CTA labels) or as
+   * the Contact band's always-dark background - both need to stay fixed
+   * regardless of page theme, or the WCAG contrast work below breaks the
+   * moment dark mode flips it. Page text uses --fg instead, which does
+   * adapt. See docs/superpowers/specs/2026-08-08-dark-mode-contrast.md. */
   --ink: #0e1524;
+  --fg: #0e1524;
   /* Brand gold, drawn from logo.png's badge ring. Two shades because a
    * bright gold fails WCAG text contrast on light backgrounds (1.96:1) -
    * see docs/superpowers/specs/2026-08-07-gold-rebrand-contrast.md for the
@@ -18,9 +26,27 @@
   --radius: 0.75rem;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0b0f1a;
+    --surface: #131a2b;
+    --fg: #f2f4f7;
+    /* Deep gold was only deep to survive light backgrounds (1.96:1 as
+     * bright gold). Against a dark background bright gold itself measures
+     * 9.10:1, so gold-deep converges to the same bright value here rather
+     * than staying artificially dim. --ink, --gold, and --signal are
+     * deliberately absent - they don't adapt, see the comment above. */
+    --gold-deep: #d4af37;
+    --muted: #9aa3b2;
+    --line: #232b3d;
+  }
+}
+
 @theme inline {
   --color-paper: var(--paper);
+  --color-surface: var(--surface);
   --color-ink: var(--ink);
+  --color-fg: var(--fg);
   --color-gold: var(--gold);
   --color-gold-deep: var(--gold-deep);
   --color-signal: var(--signal);
@@ -28,19 +54,19 @@
   --color-line: var(--line);
 
   --color-background: var(--paper);
-  --color-foreground: var(--ink);
+  --color-foreground: var(--fg);
   --color-primary: var(--gold);
   --color-primary-foreground: var(--ink);
   --color-secondary: var(--paper);
-  --color-secondary-foreground: var(--ink);
+  --color-secondary-foreground: var(--fg);
   --color-muted-foreground: var(--muted);
   --color-accent: var(--gold);
   --color-accent-foreground: var(--ink);
   --color-border: var(--line);
   --color-input: var(--line);
   --color-ring: var(--gold-deep);
-  --color-card: #ffffff;
-  --color-card-foreground: var(--ink);
+  --color-card: var(--surface);
+  --color-card-foreground: var(--fg);
   --color-destructive: #dc2626;
   --color-destructive-foreground: #ffffff;
 
@@ -55,7 +81,7 @@
 
 body {
   background-color: var(--paper);
-  color: var(--ink);
+  color: var(--fg);
 }
 
 @media (prefers-reduced-motion: no-preference) {

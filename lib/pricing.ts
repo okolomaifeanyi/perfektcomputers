@@ -1,8 +1,15 @@
+// Named constants so the actual figures can be adjusted in one place
+// without touching the tier structure below.
+export const starterPrice = "₦180,000";
+export const standardPrice = "₦450,000";
+export const proPrice = "From ₦950,000";
+/** Shown under Services (Care Plan), not in the Pricing tiers below. */
+export const carePlanPrice = "₦25,000/mo";
+
 export interface PricingTier {
   id: string;
   name: string;
   price: string;
-  isPlaceholder: true;
   description: string;
   features: string[];
   featured?: boolean;
@@ -12,8 +19,7 @@ export const pricingTiers: PricingTier[] = [
   {
     id: "starter",
     name: "Starter",
-    price: "₦XX,XXX",
-    isPlaceholder: true,
+    price: starterPrice,
     description: "A business website that gets you found online.",
     features: [
       "Up to 5 pages",
@@ -25,8 +31,7 @@ export const pricingTiers: PricingTier[] = [
   {
     id: "standard",
     name: "Standard",
-    price: "₦XXX,XXX",
-    isPlaceholder: true,
+    price: standardPrice,
     description: "A website plus a working payment setup.",
     features: [
       "Everything in Starter",
@@ -39,8 +44,7 @@ export const pricingTiers: PricingTier[] = [
   {
     id: "pro",
     name: "Pro",
-    price: "₦XXX,XXX+",
-    isPlaceholder: true,
+    price: proPrice,
     description: "A web and mobile app built for growth.",
     features: [
       "Everything in Standard",

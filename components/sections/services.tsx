@@ -36,7 +36,8 @@ export function Services() {
         <h2 className="text-3xl font-semibold tracking-tight text-fg sm:text-4xl md:text-5xl">
           Services
         </h2>
-        <p className="mt-3 max-w-[60ch] text-pretty text-base text-muted">
+        <span aria-hidden="true" className="mt-4 block h-0.5 w-12 bg-gold-deep" />
+        <p className="mt-4 max-w-[60ch] text-pretty text-base text-muted">
           Everything a small business needs to get online, take payments, and
           stay running.
         </p>

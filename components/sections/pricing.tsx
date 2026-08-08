@@ -11,7 +11,8 @@ export function Pricing() {
         <h2 className="text-3xl font-semibold tracking-tight text-fg sm:text-4xl md:text-5xl">
           Pricing
         </h2>
-        <p className="mt-3 max-w-[60ch] text-base text-muted">
+        <span aria-hidden="true" className="mt-4 block h-0.5 w-12 bg-gold-deep" />
+        <p className="mt-4 max-w-[60ch] text-base text-muted">
           Starting prices below. Every project gets a fixed quote after a quick
           consultation.
         </p>

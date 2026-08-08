@@ -39,6 +39,17 @@ export function Hero() {
             aria-hidden="true"
             className="pointer-events-none absolute inset-0 -z-10 m-auto h-64 w-64 rounded-full bg-gold/20 blur-3xl md:h-80 md:w-80"
           />
+          {/* Corner-bracket frame: a deliberate geometric accent standing in
+           * for the soft glow alone, echoing the wave divider's gold
+           * linework instead of a generic blurred-blob backdrop. */}
+          <span
+            aria-hidden="true"
+            className="animate-fade-in-up pointer-events-none absolute -left-3 -top-3 h-10 w-10 border-l-2 border-t-2 border-gold-deep/60 [animation-delay:360ms] md:-left-4 md:-top-4 md:h-14 md:w-14"
+          />
+          <span
+            aria-hidden="true"
+            className="animate-fade-in-up pointer-events-none absolute -bottom-3 -right-3 h-10 w-10 border-b-2 border-r-2 border-gold-deep/60 [animation-delay:360ms] md:-bottom-4 md:-right-4 md:h-14 md:w-14"
+          />
           <div className="animate-fade-in-up w-full max-w-sm [animation-delay:360ms] md:max-w-lg">
             <WhatsappMockup />
           </div>

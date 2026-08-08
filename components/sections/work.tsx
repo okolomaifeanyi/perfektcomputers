@@ -6,11 +6,17 @@ export function Work() {
   return (
     <section id="work" className="scroll-mt-20 bg-paper py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-semibold tracking-tight text-fg sm:text-4xl md:text-5xl">
-          Work
-        </h2>
-        <p className="mt-3 max-w-[60ch] text-pretty text-base text-muted">
-          Five shipped projects, from online stores to real-time platforms.
+        <div className="flex flex-wrap items-baseline gap-3">
+          <h2 className="text-3xl font-semibold tracking-tight text-fg sm:text-4xl md:text-5xl">
+            Work
+          </h2>
+          <span className="inline-flex items-center gap-1.5 rounded-full border border-gold-deep/30 bg-gold/5 px-3 py-1 font-mono text-xs text-gold-deep">
+            {caseStudies.length} shipped
+          </span>
+        </div>
+        <span aria-hidden="true" className="mt-4 block h-0.5 w-12 bg-gold-deep" />
+        <p className="mt-4 max-w-[60ch] text-pretty text-base text-muted">
+          From online stores to real-time platforms.
         </p>
         <div className="reveal-stagger mt-12 grid grid-flow-row-dense gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {caseStudies.map((study) => (

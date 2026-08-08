@@ -16,7 +16,8 @@ export function Contact() {
         <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl">
           Let&apos;s build something that works.
         </h2>
-        <p className="mx-auto mt-3 max-w-[46ch] text-base text-white/70">
+        <span aria-hidden="true" className="mx-auto mt-4 block h-0.5 w-12 bg-gold" />
+        <p className="mx-auto mt-4 max-w-[46ch] text-base text-white/70">
           Message us on WhatsApp for a fast reply, or email if you prefer.
         </p>
         <div className="mt-8 flex flex-col items-center gap-4">

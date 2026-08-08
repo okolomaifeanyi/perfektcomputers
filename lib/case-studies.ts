@@ -29,9 +29,10 @@ export const caseStudies: CaseStudy[] = [
       "Customers can start browsing on the website and finish checkout in the app without losing their cart.",
     techStack: ["Flutter", "Next.js", "Node.js"],
     imageSrc: "/case-studies/cometake.png",
-    imageAlt: "Cometake storefront homepage with featured product carousel",
+    imageAlt:
+      "Cometake storefront homepage with category sidebar, flash sales products, and quick-access promo tiles",
     imageWidth: 1310,
-    imageHeight: 455,
+    imageHeight: 860,
     url: "https://cometake.net",
   },
   {
@@ -48,7 +49,7 @@ export const caseStudies: CaseStudy[] = [
     imageAlt:
       "International Journal of Spectrum Research homepage with journal title and mission statement",
     imageWidth: 1310,
-    imageHeight: 565,
+    imageHeight: 900,
     url: "https://ijsrjournal.com",
   },
   {
@@ -81,9 +82,9 @@ export const caseStudies: CaseStudy[] = [
     techStack: ["Next.js", "Paystack", "Node.js"],
     imageSrc: "/case-studies/marketplace.png",
     imageAlt:
-      "Perfekt Mart marketplace homepage with category grid and bill payment promo",
+      "Perfekt Mart marketplace homepage with category grid, seller-recruitment banner, and quick-access feature cards",
     imageWidth: 1310,
-    imageHeight: 665,
+    imageHeight: 650,
     url: "https://perfektmart.com.ng",
   },
   {

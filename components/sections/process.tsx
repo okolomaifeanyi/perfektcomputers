@@ -41,6 +41,7 @@ export function Process() {
         <h2 className="text-3xl font-semibold tracking-tight text-fg sm:text-4xl md:text-5xl">
           How it works
         </h2>
+        <span aria-hidden="true" className="mt-4 block h-0.5 w-12 bg-gold-deep" />
         <ol className="mt-12 grid gap-10 sm:grid-cols-4 sm:gap-8">
           {steps.map((step, index) => (
             <li key={step.number}>

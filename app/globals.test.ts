@@ -19,21 +19,33 @@ describe("design tokens", () => {
     expect(css).toContain("--line: #e3e6ec");
   });
 
-  it("adapts to dark mode via prefers-color-scheme, never a manual .dark class toggle", () => {
+  it("adapts to dark mode via prefers-color-scheme by default, with a [data-theme] attribute override for the manual toggle - never a .dark class", () => {
     const css = readFileSync(resolve(__dirname, "globals.css"), "utf-8");
     expect(css).toContain("@media (prefers-color-scheme: dark)");
+    expect(css).toContain('[data-theme="dark"]');
+    expect(css).toContain('[data-theme="light"]');
     expect(css).not.toContain(".dark");
   });
 
-  it("keeps --ink, --gold, and --signal fixed across themes (CTA button contrast depends on this)", () => {
+  it("keeps --ink, --gold, and --signal fixed across themes, in both the system-preference and explicit-override dark blocks (CTA button contrast depends on this)", () => {
     const css = readFileSync(resolve(__dirname, "globals.css"), "utf-8");
-    const darkBlockMatch = css.match(
-      /@media \(prefers-color-scheme: dark\) \{[\s\S]*?:root \{([\s\S]*?)\}/
+
+    const systemDarkMatch = css.match(
+      /@media \(prefers-color-scheme: dark\) \{[\s\S]*?:root:not\(\[data-theme="light"\]\) \{([\s\S]*?)\n  \}/
     );
-    expect(darkBlockMatch).not.toBeNull();
-    const darkBlock = darkBlockMatch![1];
-    expect(darkBlock).not.toMatch(/--ink:/);
-    expect(darkBlock).not.toMatch(/--gold:/);
-    expect(darkBlock).not.toMatch(/--signal:/);
+    expect(systemDarkMatch).not.toBeNull();
+    const systemDarkBlock = systemDarkMatch![1];
+    expect(systemDarkBlock).not.toMatch(/--ink:/);
+    expect(systemDarkBlock).not.toMatch(/--gold:/);
+    expect(systemDarkBlock).not.toMatch(/--signal:/);
+
+    const explicitDarkMatch = css.match(
+      /:root\[data-theme="dark"\] \{([\s\S]*?)\n\}/
+    );
+    expect(explicitDarkMatch).not.toBeNull();
+    const explicitDarkBlock = explicitDarkMatch![1];
+    expect(explicitDarkBlock).not.toMatch(/--ink:/);
+    expect(explicitDarkBlock).not.toMatch(/--gold:/);
+    expect(explicitDarkBlock).not.toMatch(/--signal:/);
   });
 });

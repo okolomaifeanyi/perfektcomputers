@@ -36,12 +36,12 @@ const stepPulseClasses = [
 
 export function Process() {
   return (
-    <section id="process" className="scroll-mt-20 bg-surface py-16 md:py-24">
+    <section id="process" className="scroll-mt-20 bg-surface py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-semibold tracking-tight text-fg sm:text-4xl">
+        <h2 className="text-3xl font-semibold tracking-tight text-fg sm:text-4xl md:text-5xl">
           How it works
         </h2>
-        <ol className="mt-10 grid gap-10 sm:grid-cols-4 sm:gap-8">
+        <ol className="mt-12 grid gap-10 sm:grid-cols-4 sm:gap-8">
           {steps.map((step, index) => (
             <li key={step.number}>
               <div className="flex items-center gap-4">

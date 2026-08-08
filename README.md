@@ -9,7 +9,10 @@ page that turns Nigerian small business owners into a WhatsApp conversation.
 - Tailwind CSS v4 + shadcn/ui
 - Geist / Geist Mono (via the `geist` package)
 - lucide-react
-- Dark mode: automatic, via `prefers-color-scheme` (no toggle, no JS) - see
+- Dark mode: follows `prefers-color-scheme` by default, with a manual
+  toggle (`components/theme-toggle.tsx`) that overrides it via a
+  `data-theme` attribute + `localStorage`, set pre-paint by a blocking
+  script in `app/layout.tsx` to avoid a flash of the wrong theme - see
   `docs/superpowers/specs/2026-08-08-dark-mode-contrast.md` for the token
   design and contrast math
 

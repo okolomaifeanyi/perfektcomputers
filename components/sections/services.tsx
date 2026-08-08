@@ -31,16 +31,16 @@ const cardTransition =
 
 export function Services() {
   return (
-    <section id="services" className="scroll-mt-20 bg-surface py-16 md:py-24">
+    <section id="services" className="scroll-mt-20 bg-surface py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-semibold tracking-tight text-fg sm:text-4xl">
+        <h2 className="text-3xl font-semibold tracking-tight text-fg sm:text-4xl md:text-5xl">
           Services
         </h2>
-        <p className="mt-3 max-w-[60ch] text-pretty text-sm text-muted">
+        <p className="mt-3 max-w-[60ch] text-pretty text-base text-muted">
           Everything a small business needs to get online, take payments, and
           stay running.
         </p>
-        <div className="reveal-stagger mt-10 grid gap-4 sm:grid-cols-3">
+        <div className="reveal-stagger mt-12 grid gap-4 sm:grid-cols-3">
           {standardServices.map((service) => (
             <div
               key={service.name}

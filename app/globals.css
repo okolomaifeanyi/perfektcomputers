@@ -26,8 +26,16 @@
   --radius: 0.75rem;
 }
 
+/* Dark tokens live in two places: this media query (system preference,
+ * the default) and the [data-theme="dark"] attribute below (explicit
+ * override, set by ThemeToggle + the blocking init script in layout.tsx).
+ * :not([data-theme="light"]) lets an explicit light choice win over a
+ * dark system preference. Kept as two literal blocks rather than a
+ * combined selector so each stays readable - see
+ * docs/superpowers/specs/2026-08-08-dark-mode-contrast.md for the
+ * contrast math both blocks satisfy. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
     --paper: #0b0f1a;
     --surface: #131a2b;
     --fg: #f2f4f7;
@@ -40,6 +48,15 @@
     --muted: #9aa3b2;
     --line: #232b3d;
   }
+}
+
+:root[data-theme="dark"] {
+  --paper: #0b0f1a;
+  --surface: #131a2b;
+  --fg: #f2f4f7;
+  --gold-deep: #d4af37;
+  --muted: #9aa3b2;
+  --line: #232b3d;
 }
 
 @theme inline {
@@ -82,6 +99,21 @@
 body {
   background-color: var(--paper);
   color: var(--fg);
+}
+
+/* Fixed film-grain texture over the whole viewport. Static, not an
+ * animation, so it stays outside the prefers-reduced-motion guard below.
+ * pointer-events: none keeps it from intercepting input; no z-index, so
+ * it paints above ordinary section content but the sticky nav's explicit
+ * z-50 still wins and sits above it, per normal stacking-context rules. */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.035;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -215,6 +247,25 @@ body {
   }
   .animate-step-pulse-4 {
     animation: step-pulse-4 8s linear infinite;
+  }
+
+  /* Hero mockup "typing..." bubble: a simple 3-dot bounce, offset per dot
+   * via inline [animation-delay]. Opacity+transform only. */
+  @keyframes typing-dot {
+    0%,
+    60%,
+    100% {
+      opacity: 0.3;
+      transform: translateY(0);
+    }
+    30% {
+      opacity: 1;
+      transform: translateY(-2px);
+    }
+  }
+
+  .animate-typing-dot {
+    animation: typing-dot 1.2s ease-in-out infinite;
   }
 
   /* Scroll-linked card entrance: native browser primitive, no JS, no

@@ -4,15 +4,15 @@ import { caseStudies } from "@/lib/case-studies";
 
 export function Work() {
   return (
-    <section id="work" className="scroll-mt-20 bg-paper py-16 md:py-24">
+    <section id="work" className="scroll-mt-20 bg-paper py-20 md:py-28">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-semibold tracking-tight text-fg sm:text-4xl">
+        <h2 className="text-3xl font-semibold tracking-tight text-fg sm:text-4xl md:text-5xl">
           Work
         </h2>
-        <p className="mt-3 max-w-[60ch] text-pretty text-sm text-muted">
+        <p className="mt-3 max-w-[60ch] text-pretty text-base text-muted">
           Five shipped projects, from online stores to real-time platforms.
         </p>
-        <div className="reveal-stagger mt-10 grid grid-flow-row-dense gap-6 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="reveal-stagger mt-12 grid grid-flow-row-dense gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {caseStudies.map((study) => (
             <article
               key={study.id}

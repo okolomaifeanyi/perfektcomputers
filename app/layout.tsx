@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import { GeistSans } from "geist/font/sans";
 import { GeistMono } from "geist/font/mono";
 import { siteConfig } from "@/lib/site-config";
@@ -45,6 +46,16 @@ export default function RootLayout({
         className="bg-paper font-sans text-ink antialiased"
         suppressHydrationWarning
       >
+        <Script id="theme-init" strategy="beforeInteractive">
+          {`(function () {
+            try {
+              var stored = localStorage.getItem("theme");
+              if (stored === "light" || stored === "dark") {
+                document.documentElement.setAttribute("data-theme", stored);
+              }
+            } catch (e) {}
+          })();`}
+        </Script>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

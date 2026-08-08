@@ -26,11 +26,16 @@ export function WhatsappMockup() {
           </div>
           <span className="flex items-center gap-1 pr-1 text-[10px] text-muted">
             10:42
-            <span className="flex items-center">
+            <span className="flex items-center text-[#53bdeb]">
               <Check className="h-3 w-3" strokeWidth={2.5} />
               <Check className="-ml-1.5 h-3 w-3" strokeWidth={2.5} />
             </span>
           </span>
+        </div>
+        <div className="flex w-fit items-center gap-1 rounded-2xl rounded-tl-sm bg-paper px-3 py-3">
+          <span className="h-1.5 w-1.5 animate-typing-dot rounded-full bg-muted [animation-delay:0ms]" />
+          <span className="h-1.5 w-1.5 animate-typing-dot rounded-full bg-muted [animation-delay:160ms]" />
+          <span className="h-1.5 w-1.5 animate-typing-dot rounded-full bg-muted [animation-delay:320ms]" />
         </div>
       </div>
     </div>

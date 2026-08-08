@@ -2,6 +2,7 @@ import Image from "next/image";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/site-config";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 const navLinks = [
   { href: "#services", label: "Services" },
@@ -37,17 +38,20 @@ export function Nav() {
             </a>
           ))}
         </nav>
-        <a
-          href={siteConfig.whatsappLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={cn(
-            buttonVariants(),
-            "rounded-full bg-gold text-ink hover:bg-gold/90 active:scale-[0.98]"
-          )}
-        >
-          Chat on WhatsApp
-        </a>
+        <div className="flex items-center gap-1 sm:gap-3">
+          <ThemeToggle />
+          <a
+            href={siteConfig.whatsappLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cn(
+              buttonVariants(),
+              "rounded-full bg-gold text-ink hover:bg-gold/90 active:scale-[0.98]"
+            )}
+          >
+            Chat on WhatsApp
+          </a>
+        </div>
       </div>
     </header>
   );

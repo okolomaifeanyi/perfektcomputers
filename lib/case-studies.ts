@@ -30,7 +30,7 @@ export const caseStudies: CaseStudy[] = [
     techStack: ["Flutter", "Next.js", "Supabase"],
     imageSrc: "/case-studies/cometake.png",
     imageAlt:
-      "Cometake storefront homepage with category sidebar, flash sales products, and quick-access promo tiles",
+      "Cometake storefront homepage with a New Arrivals hero banner, category sidebar, flash sales products, and quick-access promo tiles",
     imageWidth: 1310,
     imageHeight: 860,
     url: "https://cometake.net",

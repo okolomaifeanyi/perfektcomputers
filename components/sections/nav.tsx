@@ -32,9 +32,13 @@ export function Nav() {
             <a
               key={link.href}
               href={link.href}
-              className="rounded-md text-sm font-medium text-muted transition-colors hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-deep/60"
+              className="group relative rounded-md text-sm font-medium text-muted transition-colors hover:text-gold-deep focus-visible:text-gold-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-deep/60"
             >
               {link.label}
+              <span
+                aria-hidden="true"
+                className="pointer-events-none absolute -bottom-1 left-0 h-0.5 w-full origin-left scale-x-0 bg-gold-deep transition-transform duration-300 ease-out group-hover:scale-x-100 group-focus-visible:scale-x-100"
+              />
             </a>
           ))}
         </nav>

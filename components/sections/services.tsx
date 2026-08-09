@@ -4,6 +4,7 @@ import {
   ShoppingCart,
   Smartphone,
   Wallet,
+  type LucideIcon,
 } from "lucide-react";
 import { carePlanPrice } from "@/lib/pricing";
 
@@ -29,6 +30,20 @@ const standardServices = [
 const cardTransition =
   "transition-all duration-500 [transition-timing-function:cubic-bezier(0.16,1,0.3,1)]";
 
+// Rotated-square badge, echoing the diamond frame from the hero reference
+// image rather than the generic rounded-square icon-in-a-box pattern.
+function ServiceIcon({ icon: Icon }: { icon: LucideIcon }) {
+  return (
+    <span className="relative flex h-10 w-10 shrink-0 items-center justify-center">
+      <span
+        aria-hidden="true"
+        className={`absolute inset-0 m-auto h-7 w-7 rotate-45 rounded-md border border-gold-deep/50 bg-gold/10 group-hover:scale-110 ${cardTransition}`}
+      />
+      <Icon className="relative h-5 w-5 text-gold-deep" strokeWidth={1.5} />
+    </span>
+  );
+}
+
 export function Services() {
   return (
     <section id="services" className="scroll-mt-20 bg-surface py-20 md:py-28">
@@ -47,14 +62,7 @@ export function Services() {
               key={service.name}
               className={`reveal-on-scroll group rounded-xl bg-paper p-6 shadow-[0_1px_2px_rgba(14,21,36,0.05)] hover:-translate-y-1.5 hover:bg-surface hover:shadow-[0_12px_32px_rgba(138,106,29,0.16)] dark:shadow-none dark:hover:shadow-none ${cardTransition}`}
             >
-              <span
-                className={`flex h-10 w-10 items-center justify-center rounded-lg bg-gold/10 group-hover:scale-110 ${cardTransition}`}
-              >
-                <service.icon
-                  className="h-5 w-5 text-gold-deep"
-                  strokeWidth={1.5}
-                />
-              </span>
+              <ServiceIcon icon={service.icon} />
               <h3 className="mt-4 text-base font-semibold text-fg">
                 {service.name}
               </h3>
@@ -66,11 +74,7 @@ export function Services() {
           <div
             className={`reveal-on-scroll group rounded-xl bg-paper p-6 shadow-[0_1px_2px_rgba(14,21,36,0.05)] hover:-translate-y-1.5 hover:bg-surface hover:shadow-[0_12px_32px_rgba(138,106,29,0.16)] dark:shadow-none dark:hover:shadow-none sm:col-span-2 ${cardTransition}`}
           >
-            <span
-              className={`flex h-10 w-10 items-center justify-center rounded-lg bg-gold/10 group-hover:scale-110 ${cardTransition}`}
-            >
-              <Wallet className="h-5 w-5 text-gold-deep" strokeWidth={1.5} />
-            </span>
+            <ServiceIcon icon={Wallet} />
             <h3 className="mt-4 text-base font-semibold text-fg">
               Payments &amp; Wallets
             </h3>
@@ -82,11 +86,7 @@ export function Services() {
           <div
             className={`reveal-on-scroll group rounded-xl border border-gold-deep/30 bg-gold/5 p-6 hover:-translate-y-1.5 hover:shadow-[0_12px_32px_rgba(138,106,29,0.20)] dark:shadow-none dark:hover:shadow-none ${cardTransition}`}
           >
-            <span
-              className={`flex h-10 w-10 items-center justify-center rounded-lg bg-gold/10 group-hover:scale-110 ${cardTransition}`}
-            >
-              <RefreshCw className="h-5 w-5 text-gold-deep" strokeWidth={1.5} />
-            </span>
+            <ServiceIcon icon={RefreshCw} />
             <div className="mt-4 flex items-baseline gap-2">
               <h3 className="text-base font-semibold text-fg">Care Plan</h3>
               <span className="font-mono text-sm text-gold-deep">

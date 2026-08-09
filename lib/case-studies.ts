@@ -27,7 +27,7 @@ export const caseStudies: CaseStudy[] = [
       "A mobile and web e-commerce app sharing one backend, so product listings, orders, and inventory stay in sync everywhere customers shop.",
     standoutDetail:
       "Customers can start browsing on the website and finish checkout in the app without losing their cart.",
-    techStack: ["Flutter", "Next.js", "Node.js"],
+    techStack: ["Flutter", "Next.js", "Supabase"],
     imageSrc: "/case-studies/cometake.png",
     imageAlt:
       "Cometake storefront homepage with category sidebar, flash sales products, and quick-access promo tiles",
@@ -61,7 +61,7 @@ export const caseStudies: CaseStudy[] = [
       "A curated hospitality discovery platform covering hotels, restaurants, nightlife, and wellness venues, starting with Awka and built to expand city by city, with an interactive map and handpicked recommendations instead of exhaustive listings.",
     standoutDetail:
       "Every listing is hand-picked rather than pulled from an open directory, so what's live is a small, curated set worth actually visiting, not exhaustive clutter.",
-    techStack: ["Next.js", "Node.js", "PostgreSQL"],
+    techStack: ["Next.js", "Supabase", "PostgreSQL"],
     imageSrc: "/case-studies/savannah-spot.png",
     imageAlt:
       'SavannaSpot homepage: "Experience Awka like never before" over a night skyline, with search and category sidebar',
@@ -79,7 +79,7 @@ export const caseStudies: CaseStudy[] = [
       "A marketplace with per-vendor dashboards and role-based access, unified checkout via Paystack, an in-app wallet, and VTU airtime and data top-up built in.",
     standoutDetail:
       "Vendors get their own dashboard and permissions, but customers check out once, even when a cart spans multiple vendors.",
-    techStack: ["Next.js", "Paystack", "Node.js"],
+    techStack: ["Next.js", "Paystack", "Supabase"],
     imageSrc: "/case-studies/marketplace.png",
     imageAlt:
       "Perfekt Mart marketplace homepage with category grid, seller-recruitment banner, and quick-access feature cards",

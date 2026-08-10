@@ -5,7 +5,7 @@ export const siteConfig = {
   url: "https://perfektcomputers.com.ng",
   whatsappNumber,
   whatsappLink: `https://wa.me/${whatsappNumber}`,
-  email: "ifeanyiokoloma@gmail.com",
+  email: "hello@perfektcomputers.com.ng",
 } as const;
 
 export type SiteConfig = typeof siteConfig;

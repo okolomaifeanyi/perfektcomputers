@@ -18,6 +18,6 @@ describe("siteConfig", () => {
   });
 
   it("exposes the contact email", () => {
-    expect(siteConfig.email).toBe("ifeanyiokoloma@gmail.com");
+    expect(siteConfig.email).toBe("hello@perfektcomputers.com.ng");
   });
 });

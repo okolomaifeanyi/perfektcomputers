@@ -17,8 +17,8 @@ export function Hero() {
             <span className="text-gold-deep">Found, and Paid</span>
           </h1>
           <p className="animate-fade-in-up mt-6 max-w-[46ch] text-pretty text-base text-muted [animation-delay:120ms] sm:text-lg">
-            Full-stack web and mobile development, with Paystack and VTU
-            integration experience.
+            One fixed price, one clear timeline, no surprises after
+            you&apos;ve paid.
           </p>
           <div className="animate-fade-in-up mt-8 [animation-delay:240ms]">
             <a

@@ -35,7 +35,12 @@ export function Pricing() {
               <p className="mt-2 font-mono text-3xl font-semibold text-fg">
                 {tier.price}
               </p>
-              <p className="mt-2 text-sm text-muted">{tier.description}</p>
+              {/* min-h reserves 2 lines regardless of actual wrap, so the
+               * feature list below starts at the same Y across all three
+               * cards - some descriptions wrap to 1 line, others to 2. */}
+              <p className="mt-2 min-h-10 text-sm text-muted">
+                {tier.description}
+              </p>
               <ul className="mt-6 flex flex-1 flex-col gap-2">
                 {tier.features.map((feature) => (
                   <li

@@ -13,17 +13,18 @@ const standardServices = [
     icon: Globe,
     name: "Business Websites",
     description:
-      "Landing pages and company sites that make a strong first impression.",
+      "Give new customers a reason to trust you before they ever call.",
   },
   {
     icon: ShoppingCart,
     name: "Online Stores",
-    description: "Full e-commerce storefronts with Paystack checkout built in.",
+    description:
+      "Get paid instantly — no more chasing 'sent, check your alert.'",
   },
   {
     icon: Smartphone,
     name: "Mobile Apps",
-    description: "Android and iOS apps, including Play Store publishing.",
+    description: "Show up on their home screen, not just their browser.",
   },
 ];
 
@@ -79,8 +80,7 @@ export function Services() {
               Payments &amp; Wallets
             </h3>
             <p className="mt-2 text-sm text-muted">
-              Paystack integration, in-app wallets, and VTU airtime and data
-              top-up.
+              Pay, top up, and keep a balance — all in one place.
             </p>
           </div>
           <div
@@ -94,8 +94,8 @@ export function Services() {
               </span>
             </div>
             <p className="mt-2 text-sm text-muted">
-              A small monthly fee keeps your site updated, backed up, and
-              supported.
+              If something breaks the night before a big sale, you&apos;re
+              not on your own.
             </p>
           </div>
         </div>

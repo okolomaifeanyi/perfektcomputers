@@ -20,7 +20,7 @@ export const pricingTiers: PricingTier[] = [
     id: "starter",
     name: "Starter",
     price: starterPrice,
-    description: "A business website that gets you found online.",
+    description: "A real website that's easy to find and easy to trust.",
     features: [
       "Up to 5 pages",
       "Mobile-friendly design",
@@ -32,7 +32,8 @@ export const pricingTiers: PricingTier[] = [
     id: "standard",
     name: "Standard",
     price: standardPrice,
-    description: "A website plus a working payment setup.",
+    description:
+      "Everything in Starter, plus a way to actually get paid online.",
     features: [
       "Everything in Starter",
       "Online store or booking flow",
@@ -45,7 +46,8 @@ export const pricingTiers: PricingTier[] = [
     id: "pro",
     name: "Pro",
     price: proPrice,
-    description: "A web and mobile app built for growth.",
+    description:
+      "Everything in Standard, plus your own app to grow with you.",
     features: [
       "Everything in Standard",
       "Native or cross-platform mobile app",

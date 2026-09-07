@@ -84,7 +84,7 @@ export const caseStudies: CaseStudy[] = [
     imageAlt:
       "Perfekt Mart marketplace homepage with category grid, seller-recruitment banner, and quick-access feature cards",
     imageWidth: 1310,
-    imageHeight: 650,
+    imageHeight: 900,
     url: "https://perfektmart.com.ng",
   },
   {

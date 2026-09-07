@@ -2,11 +2,26 @@ import { describe, it, expect } from "vitest";
 import { caseStudies } from "@/lib/case-studies";
 
 describe("caseStudies", () => {
-  it("has exactly 5 case studies (Idikarh Properties and Yunivax Sports removed, PerfektScore added)", () => {
-    expect(caseStudies).toHaveLength(5);
+  it("has the full portfolio set with the added projects", () => {
+    expect(caseStudies).toHaveLength(13);
     const ids = caseStudies.map((s) => s.id);
-    expect(ids).not.toContain("idikarh-properties");
-    expect(ids).not.toContain("yunivax-sports");
+    expect(ids).toEqual(
+      expect.arrayContaining([
+        "cometake",
+        "ijsr",
+        "savannah-spot",
+        "marketplace",
+        "perfektscore",
+        "yunivax",
+        "kaiserlowe-ugo",
+        "yunikstarz",
+        "perfekthub",
+        "weather-forecast-app",
+        "advanced-calculator",
+        "event-update",
+        "inventory-lite",
+      ]),
+    );
     expect(ids).toContain("perfektscore");
   });
 
@@ -35,6 +50,18 @@ describe("caseStudies", () => {
     expect(byId["marketplace"]).toBe("https://perfektmart.com.ng");
     expect(byId["savannah-spot"]).toBe("https://savannaspot.com");
     expect(byId["perfektscore"]).toBe("https://perfektscore.vercel.app");
+    expect(byId["yunivax"]).toBe("https://yunivax.netlify.app");
+    expect(byId["kaiserlowe-ugo"]).toBe("https://kaiserlowe.netlify.app");
+    expect(byId["yunikstarz"]).toBe("https://yunikstarz.netlify.app");
+    expect(byId["perfekthub"]).toBe("https://perfekthub.vercel.app");
+    expect(byId["weather-forecast-app"]).toBe(
+      "https://weather-forecasted-now.netlify.app",
+    );
+    expect(byId["advanced-calculator"]).toBe(
+      "https://advanced-calcalator.netlify.app",
+    );
+    expect(byId["event-update"]).toBe("https://gl-event.netlify.app");
+    expect(byId["inventory-lite"]).toBe("https://inventory-lite.netlify.app");
   });
 
   it("marks exactly two case studies as featured for the varied-size grid", () => {

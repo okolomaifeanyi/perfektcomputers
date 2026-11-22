@@ -50,24 +50,24 @@ export const caseStudies: CaseStudy[] = [
       "International Journal of Spectrum Research homepage with journal title and mission statement",
     imageWidth: 1310,
     imageHeight: 900,
-    url: "https://ijsrjournal.com",
+    url: "https://www.ijsrjournal.com/",
   },
   {
-    id: "savannah-spot",
-    title: "Savannah Spot",
+    id: "savanna-spot",
+    title: "Savanna Spot",
     problem:
-      "Discerning travelers in Nigerian cities had no curated way to find premium hotels, restaurants, and experiences, just directory clutter and word of mouth.",
+      "Finding a short stay can mean calling several venues just to compare photos, amenities, and availability.",
     whatWasBuilt:
-      "A curated hospitality discovery platform covering hotels, restaurants, nightlife, and wellness venues, starting with Awka and built to expand city by city, with an interactive map and handpicked recommendations instead of exhaustive listings.",
+      "A venue discovery site with searchable listings, amenity filters, and booking enquiries. The current public listings are short stays in Lagos.",
     standoutDetail:
-      "Every listing is hand-picked rather than pulled from an open directory, so what's live is a small, curated set worth actually visiting, not exhaustive clutter.",
+      "Guests can compare listing details and submit an enquiry without paying on the site.",
     techStack: ["Next.js", "Supabase", "PostgreSQL"],
     imageSrc: "/case-studies/savannah-spot.png",
     imageAlt:
-      'SavannaSpot homepage: "Experience Awka like never before" over a night skyline, with search and category sidebar',
+      'Earlier Savanna Spot homepage: "Experience Awka like never before" over a night skyline, with search and category sidebar',
     imageWidth: 1310,
     imageHeight: 900,
-    url: "https://savannaspot.com",
+    url: "https://www.savannaspot.com/",
     featured: true,
   },
   {
@@ -90,19 +90,19 @@ export const caseStudies: CaseStudy[] = [
   {
     id: "perfektscore",
     title: "PerfektScore",
+    tagline: "Archived project. Live demo offline.",
     problem:
       "Football fans juggle several different apps and sites just to keep track of fixtures, live scores, and highlights across the leagues they follow.",
     whatWasBuilt:
-      "A football tracking platform covering 23 leagues and 6 major competitions, with live fixtures, results, team pages, and highlight clips in one place.",
+      "A football tracking platform that brought fixtures, results, team pages, and highlight clips together.",
     standoutDetail:
-      "Highlight clips pull in automatically as matches finish, so fans don't have to go hunting for them after a big game.",
+      "Integrated football data and video feeds for match updates and highlights.",
     techStack: ["Next.js", "TheSportsDB API", "Scorebat"],
     imageSrc: "/case-studies/perfektscore.png",
     imageAlt:
       "PerfektScore dashboard showing today's fixtures, live match count, and league sidebar",
     imageWidth: 1310,
     imageHeight: 900,
-    url: "https://perfektscore.vercel.app",
     featured: true,
   },
   {
@@ -157,21 +157,21 @@ export const caseStudies: CaseStudy[] = [
     url: "https://yunikstarz.netlify.app",
   },
   {
-    id: "perfekthub",
-    title: "Perfekthub",
+    id: "savanna-spot-hub",
+    title: "Savanna Spot Hub",
     problem:
-      "A social-style hub needed a feed, discovery, and sign-in experience that could feel familiar without being cluttered.",
+      "The community product needed a separate home for discovery and social interaction, distinct from the venue listings site.",
     whatWasBuilt:
-      "A social content platform with feed browsing, discovery sections, sign-in prompts, and group recommendations.",
+      "A Next.js and Supabase community platform with a feed, discovery, friend requests, and notifications.",
     standoutDetail:
-      "The layout keeps the feed in focus while the side rails handle friends and group discovery.",
+      "Scoped relationship updates to each account and paused fallback polling in inactive tabs.",
     techStack: ["Next.js", "Supabase", "Social UI"],
     imageSrc: "/case-studies/perfekthub.png",
     imageAlt:
-      "Perfekthub social dashboard with a left navigation rail, central feed card, and right-hand friends and group panels",
+      "Earlier version of the Savanna Spot Hub social dashboard with a left navigation rail, central feed card, and right-hand friends and group panels",
     imageWidth: 1310,
     imageHeight: 900,
-    url: "https://perfekthub.vercel.app",
+    url: "https://hub.savannaspot.com/",
   },
   {
     id: "weather-forecast-app",

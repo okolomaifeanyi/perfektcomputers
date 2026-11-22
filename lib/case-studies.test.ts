@@ -9,20 +9,20 @@ describe("caseStudies", () => {
       expect.arrayContaining([
         "cometake",
         "ijsr",
-        "savannah-spot",
+        "savanna-spot",
         "marketplace",
         "perfektscore",
         "yunivax",
         "kaiserlowe-ugo",
         "yunikstarz",
-        "perfekthub",
+        "savanna-spot-hub",
         "weather-forecast-app",
         "advanced-calculator",
         "event-update",
         "inventory-lite",
       ]),
     );
-    expect(ids).toContain("perfektscore");
+    expect(ids[0]).toBe("cometake");
   });
 
   it("gives every case study the fields the Work section depends on", () => {
@@ -43,17 +43,24 @@ describe("caseStudies", () => {
     }
   });
 
-  it("links each live project to its real URL", () => {
+  it("labels the archived football project and keeps the Savanna Spot projects distinct", () => {
+    const byId = Object.fromEntries(caseStudies.map((s) => [s.id, s]));
+    expect(byId["perfektscore"].tagline).toMatch(/live demo offline/i);
+    expect(byId["savanna-spot"].title).toBe("Savanna Spot");
+    expect(byId["savanna-spot-hub"].title).toBe("Savanna Spot Hub");
+  });
+
+  it("uses distinct project URLs and omits the archived demo link", () => {
     const byId = Object.fromEntries(caseStudies.map((s) => [s.id, s.url]));
     expect(byId["cometake"]).toBe("https://cometake.net");
-    expect(byId["ijsr"]).toBe("https://ijsrjournal.com");
+    expect(byId["ijsr"]).toBe("https://www.ijsrjournal.com/");
     expect(byId["marketplace"]).toBe("https://perfektmart.com.ng");
-    expect(byId["savannah-spot"]).toBe("https://savannaspot.com");
-    expect(byId["perfektscore"]).toBe("https://perfektscore.vercel.app");
+    expect(byId["savanna-spot"]).toBe("https://www.savannaspot.com/");
+    expect(byId["perfektscore"]).toBeUndefined();
     expect(byId["yunivax"]).toBe("https://yunivax.netlify.app");
     expect(byId["kaiserlowe-ugo"]).toBe("https://kaiserlowe.netlify.app");
     expect(byId["yunikstarz"]).toBe("https://yunikstarz.netlify.app");
-    expect(byId["perfekthub"]).toBe("https://perfekthub.vercel.app");
+    expect(byId["savanna-spot-hub"]).toBe("https://hub.savannaspot.com/");
     expect(byId["weather-forecast-app"]).toBe(
       "https://weather-forecasted-now.netlify.app",
     );
@@ -69,7 +76,7 @@ describe("caseStudies", () => {
     expect(featured).toHaveLength(2);
     expect(featured.map((s) => s.id).sort()).toEqual([
       "perfektscore",
-      "savannah-spot",
+      "savanna-spot",
     ]);
   });
 });

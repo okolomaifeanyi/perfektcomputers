@@ -14,7 +14,10 @@ export function Work() {
             {caseStudies.length} shipped
           </span>
         </div>
-        <span aria-hidden="true" className="mt-4 block h-0.5 w-12 bg-gold-deep" />
+        <span
+          aria-hidden="true"
+          className="mt-4 block h-0.5 w-12 bg-gold-deep"
+        />
         <p className="mt-4 max-w-[60ch] text-pretty text-base text-muted">
           From online stores to real-time platforms.
         </p>
@@ -63,17 +66,23 @@ export function Work() {
                   {study.standoutDetail}
                 </p>
                 <div className="mt-auto flex flex-col gap-3 pt-4">
-                  {study.url ? (
+                  {[
+                    ...(study.url
+                      ? [{ label: "Visit site", url: study.url }]
+                      : []),
+                    ...(study.relatedLink ? [study.relatedLink] : []),
+                  ].map(({ label, url }) => (
                     <a
-                      href={study.url}
+                      href={url}
+                      key={url}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="inline-flex w-fit items-center gap-1 rounded-md text-sm font-medium text-gold-deep underline decoration-gold-deep/40 underline-offset-4 transition-colors hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-deep/60"
                     >
-                      Visit site
+                      {label}
                       <ExternalLink className="h-3.5 w-3.5" strokeWidth={1.5} />
                     </a>
-                  ) : null}
+                  ))}
                   <ul
                     className="flex flex-wrap gap-2 font-mono text-xs text-muted"
                     aria-label={`${study.title} tech stack`}

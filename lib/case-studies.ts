@@ -14,6 +14,7 @@ export interface CaseStudy {
   imageHeight: number;
   /** Live project URL, shown as a "Visit site" link when present. */
   url?: string;
+  relatedLink?: { label: string; url: string };
   featured?: boolean;
 }
 
@@ -51,6 +52,10 @@ export const caseStudies: CaseStudy[] = [
     imageWidth: 1310,
     imageHeight: 900,
     url: "https://www.ijsrjournal.com/",
+    relatedLink: {
+      label: "Explore Noble City Publishers (NCP)",
+      url: "https://www.ijsrjournal.com/ncp",
+    },
   },
   {
     id: "savanna-spot",
@@ -64,7 +69,7 @@ export const caseStudies: CaseStudy[] = [
     techStack: ["Next.js", "Supabase", "PostgreSQL"],
     imageSrc: "/case-studies/savanna-spot.webp",
     imageAlt:
-      'Savanna Spot homepage with the Lagos bridge at night, city choices, weather estimate, and venue search',
+      "Savanna Spot homepage with the Lagos bridge at night, city choices, weather estimate, and venue search",
     imageWidth: 1310,
     imageHeight: 679,
     url: "https://www.savannaspot.com/",
@@ -80,11 +85,11 @@ export const caseStudies: CaseStudy[] = [
     standoutDetail:
       "Vendors get their own dashboard and permissions, but customers check out once, even when a cart spans multiple vendors.",
     techStack: ["Next.js", "Paystack", "Supabase"],
-    imageSrc: "/case-studies/marketplace.png",
+    imageSrc: "/case-studies/perfekt-mart.webp",
     imageAlt:
-      "Perfekt Mart marketplace homepage with category grid, seller-recruitment banner, and quick-access feature cards",
+      "Perfekt Mart storefront with product search, a seller recruitment banner, and shortcuts for airtime, bills, product comparison, and wallet",
     imageWidth: 1310,
-    imageHeight: 900,
+    imageHeight: 614,
     url: "https://perfektmart.com.ng",
   },
   {

@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { render } from "@testing-library/react";
+import { render, within } from "@testing-library/react";
 import { axe } from "jest-axe";
 import Home from "@/app/page";
 
@@ -18,10 +18,10 @@ describe("Home page", () => {
     const paragraphs = about.querySelectorAll("p");
     expect(paragraphs).toHaveLength(2);
     expect(paragraphs[0]).toHaveTextContent(
-      "I’m Ifeanyi Okoloma, a full-stack developer based in Nigeria. I build and maintain web products, from the interfaces customers use to the systems that keep payments and publishing working.",
+      "I’m Ifeanyi Okoloma, a full-stack developer based in Nigeria. I build and maintain web products, from the interfaces customers use to the systems that keep payments and publishing working."
     );
     expect(paragraphs[1]).toHaveTextContent(
-      "At Savanna Spot, I’ve worked on venue discovery and a community hub. On Cometake, I’ve investigated payment and wallet issues, including cases where a successful payment didn’t update the customer’s balance. I’ve also worked on publishing workflows for IJSR Journal. I’m open to remote frontend and full-stack roles.",
+      "At Savanna Spot, I’ve worked on venue discovery and a community hub. On Cometake, I’ve investigated payment and wallet issues, including cases where a successful payment didn’t update the customer’s balance. I’ve also worked on publishing workflows for IJSR Journal. I’m open to remote frontend and full-stack roles."
     );
   });
 
@@ -38,6 +38,22 @@ describe("Home page", () => {
     const about = getByRole("region", { name: "About Ifeanyi" });
     expect(links[2]).toHaveAttribute("href", "#about");
     expect(about).toHaveAttribute("id", "about");
+  });
+
+  it("links the public NCP catalogue within the IJSR case study", () => {
+    const { getByRole } = render(<Home />);
+    const card = getByRole("heading", { name: "IJSR Journal" }).closest(
+      "article"
+    );
+    expect(card).not.toBeNull();
+    const links = within(card!);
+    expect(links.getByRole("link", { name: "Visit site" })).toHaveAttribute(
+      "href",
+      "https://www.ijsrjournal.com/"
+    );
+    expect(
+      links.getByRole("link", { name: "Explore Noble City Publishers (NCP)" })
+    ).toHaveAttribute("href", "https://www.ijsrjournal.com/ncp");
   });
 
   it("has exactly one h1", () => {

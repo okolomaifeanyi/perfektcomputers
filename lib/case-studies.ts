@@ -166,11 +166,11 @@ export const caseStudies: CaseStudy[] = [
     standoutDetail:
       "Scoped relationship updates to each account and paused fallback polling in inactive tabs.",
     techStack: ["Next.js", "Supabase", "Social UI"],
-    imageSrc: "/case-studies/perfekthub.png",
+    imageSrc: "/case-studies/savanna-spot-hub.webp",
     imageAlt:
-      "Earlier version of the Savanna Spot Hub social dashboard with a left navigation rail, central feed card, and right-hand friends and group panels",
+      "Savanna Spot Hub public Articles page with navigation, an illustrated editorial card, and guest sign-in links",
     imageWidth: 1310,
-    imageHeight: 900,
+    imageHeight: 679,
     url: "https://hub.savannaspot.com/",
   },
   {

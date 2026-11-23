@@ -101,6 +101,17 @@ describe("Home page", () => {
     }
   });
 
+  it("shows the optional AI add-on directly after pricing", () => {
+    const { getByRole } = render(<Home />);
+    const addOn = getByRole("region", { name: "Website AI Assistant" });
+    expect(addOn.previousElementSibling).toHaveAttribute("id", "pricing");
+    expect(addOn).toHaveTextContent("Optional add-on");
+    expect(addOn).toHaveTextContent(/usage limit agreed upfront/);
+    expect(
+      within(addOn).getByRole("link", { name: "Chat on WhatsApp" })
+    ).toHaveAttribute("href", "https://wa.me/2349030658008");
+  });
+
   it("has exactly one h1", () => {
     const { container } = render(<Home />);
     expect(container.querySelectorAll("h1")).toHaveLength(1);

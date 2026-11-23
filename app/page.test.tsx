@@ -112,6 +112,42 @@ describe("Home page", () => {
     ).toHaveAttribute("href", "https://wa.me/2349030658008");
   });
 
+  it("links the hero proof to Cometake and keeps portfolio order intentional", () => {
+    const { container, getByRole } = render(<Home />);
+    const proof = getByRole("link", {
+      name: "See how I built online shopping and payments for Cometake",
+    });
+    expect(proof).toHaveAttribute("href", "#project-cometake");
+    const cards = [...container.querySelectorAll("#work article")];
+    expect(cards.slice(0, 4).map((card) => card.id)).toEqual([
+      "project-cometake",
+      "project-savanna-spot",
+      "project-ijsr",
+      "project-savanna-spot-hub",
+    ]);
+    expect(cards).toHaveLength(13);
+    expect(cards.at(-1)?.id).toBe("project-perfektscore");
+    expect(getByRole("heading", { name: "More work" })).toBeInTheDocument();
+    expect(container).not.toHaveTextContent("Typically replies within an hour");
+  });
+
+  it("keeps four semantic process steps and adds footer shortcuts", () => {
+    const { container, getByRole } = render(<Home />);
+    const process = within(container.querySelector("#process")!);
+    expect(process.getAllByRole("listitem")).toHaveLength(4);
+    expect(process.getByText("1").parentElement).toHaveAttribute(
+      "aria-hidden",
+      "true"
+    );
+    expect(
+      process.getByRole("link", { name: "Get a fixed quote" })
+    ).toHaveAttribute("href", "https://wa.me/2349030658008");
+    const footer = within(getByRole("navigation", { name: "Footer" }));
+    expect(
+      footer.getAllByRole("link").map((link) => link.getAttribute("href"))
+    ).toEqual(["#services", "#work", "#about", "#pricing"]);
+  });
+
   it("has exactly one h1", () => {
     const { container } = render(<Home />);
     expect(container.querySelectorAll("h1")).toHaveLength(1);

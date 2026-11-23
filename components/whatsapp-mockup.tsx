@@ -13,7 +13,7 @@ export function WhatsappMockup() {
         </span>
         <div>
           <p className="text-sm font-semibold text-fg">{siteConfig.name}</p>
-          <p className="text-xs text-muted">Typically replies within an hour</p>
+          <p className="text-xs text-muted">Example conversation</p>
         </div>
       </div>
       <div className="mt-4 flex flex-col gap-2">

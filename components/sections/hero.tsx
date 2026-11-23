@@ -8,7 +8,7 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden scroll-mt-20 pb-20 pt-16 md:pb-28 md:pt-20"
+      className="relative overflow-hidden scroll-mt-32 md:scroll-mt-20 pb-20 pt-16 md:pb-28 md:pt-20"
     >
       <div className="relative z-10 mx-auto max-w-7xl grid items-center gap-12 px-4 sm:px-6 md:grid-cols-2 lg:px-8">
         <div>
@@ -17,10 +17,10 @@ export function Hero() {
             <span className="text-gold-deep">Found, and Paid</span>
           </h1>
           <p className="animate-fade-in-up mt-6 max-w-[46ch] text-pretty text-base text-muted [animation-delay:120ms] sm:text-lg">
-            One fixed price, one clear timeline, no surprises after
-            you&apos;ve paid.
+            One fixed price, one clear timeline, no surprises after you&apos;ve
+            paid.
           </p>
-          <div className="animate-fade-in-up mt-8 [animation-delay:240ms]">
+          <div className="animate-fade-in-up mt-8 flex flex-col items-start gap-4 [animation-delay:240ms]">
             <a
               href={siteConfig.whatsappLink}
               target="_blank"
@@ -31,6 +31,12 @@ export function Hero() {
               )}
             >
               Chat on WhatsApp
+            </a>
+            <a
+              href="#project-cometake"
+              className="rounded-sm text-sm font-medium text-gold-deep underline underline-offset-4 hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-deep"
+            >
+              See how I built online shopping and payments for Cometake
             </a>
           </div>
         </div>

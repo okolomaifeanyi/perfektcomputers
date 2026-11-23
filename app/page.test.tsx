@@ -15,9 +15,29 @@ describe("Home page", () => {
     const about = getByRole("region", { name: "About Ifeanyi" });
     expect(about.previousElementSibling).toHaveAttribute("id", "work");
     expect(about.nextElementSibling).toHaveAttribute("id", "process");
-    expect(about.querySelector("p")).toHaveTextContent(
-      "I’m Ifeanyi Okoloma, a full-stack developer based in Nigeria. My work includes building venue discovery for Savanna Spot and fixing payment and wallet flows for Cometake. I’m open to remote frontend and full-stack roles.",
+    const paragraphs = about.querySelectorAll("p");
+    expect(paragraphs).toHaveLength(2);
+    expect(paragraphs[0]).toHaveTextContent(
+      "I’m Ifeanyi Okoloma, a full-stack developer based in Nigeria. I build and maintain web products, from the interfaces customers use to the systems that keep payments and publishing working.",
     );
+    expect(paragraphs[1]).toHaveTextContent(
+      "At Savanna Spot, I’ve worked on venue discovery and a community hub. On Cometake, I’ve investigated payment and wallet issues, including cases where a successful payment didn’t update the customer’s balance. I’ve also worked on publishing workflows for IJSR Journal. I’m open to remote frontend and full-stack roles.",
+    );
+  });
+
+  it("links to About between Work and Pricing in the primary navigation", () => {
+    const { getByRole } = render(<Home />);
+    const nav = getByRole("navigation", { name: "Primary" });
+    const links = [...nav.querySelectorAll("a")];
+    expect(links.map((link) => link.textContent?.trim())).toEqual([
+      "Services",
+      "Work",
+      "About",
+      "Pricing",
+    ]);
+    const about = getByRole("region", { name: "About Ifeanyi" });
+    expect(links[2]).toHaveAttribute("href", "#about");
+    expect(about).toHaveAttribute("id", "about");
   });
 
   it("has exactly one h1", () => {

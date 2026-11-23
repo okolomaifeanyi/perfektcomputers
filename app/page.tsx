@@ -15,8 +15,9 @@ export default function Home() {
         <Services />
         <Work />
         <section
+          id="about"
           aria-labelledby="about-ifeanyi"
-          className="border-t border-line bg-paper py-20 md:py-28"
+          className="scroll-mt-20 border-t border-line bg-paper py-20 md:py-28"
         >
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <h2
@@ -30,10 +31,16 @@ export default function Home() {
               className="mt-4 block h-0.5 w-12 bg-gold-deep"
             />
             <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted">
-              I’m Ifeanyi Okoloma, a full-stack developer based in Nigeria. My
-              work includes building venue discovery for Savanna Spot and fixing
-              payment and wallet flows for Cometake. I’m open to remote frontend
-              and full-stack roles.
+              I’m Ifeanyi Okoloma, a full-stack developer based in Nigeria. I
+              build and maintain web products, from the interfaces customers use
+              to the systems that keep payments and publishing working.
+            </p>
+            <p className="mt-4 max-w-2xl text-base leading-relaxed text-muted">
+              At Savanna Spot, I’ve worked on venue discovery and a community
+              hub. On Cometake, I’ve investigated payment and wallet issues,
+              including cases where a successful payment didn’t update the
+              customer’s balance. I’ve also worked on publishing workflows for
+              IJSR Journal. I’m open to remote frontend and full-stack roles.
             </p>
           </div>
         </section>

@@ -13,18 +13,19 @@ const standardServices = [
     icon: Globe,
     name: "Business Websites",
     description:
-      "Give new customers a reason to trust you before they ever call.",
+      "Help customers find your services, see your work, and get in touch on WhatsApp.",
   },
   {
     icon: ShoppingCart,
-    name: "Online Stores",
+    name: "Online Stores & Booking",
     description:
-      "Get paid instantly — no more chasing 'sent, check your alert.'",
+      "Sell products or take bookings online and accept payments through Paystack.",
   },
   {
     icon: Smartphone,
     name: "Mobile Apps",
-    description: "Show up on their home screen, not just their browser.",
+    description:
+      "Build a focused Android app for a workflow such as ordering or booking.",
   },
 ];
 
@@ -86,7 +87,8 @@ export function Services() {
               Payments &amp; Wallets
             </h3>
             <p className="mt-2 text-sm text-muted">
-              Pay, top up, and keep a balance — all in one place.
+              Add online payments to an existing website or build a wallet for
+              your product.
             </p>
           </div>
           <div

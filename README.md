@@ -41,7 +41,6 @@ npm run lint
       `carePlanPrice`).
 - [x] All case-study images in `public/case-studies/` are real screenshots.
 - [ ] Confirm `siteConfig.url` in `lib/site-config.ts` matches the production domain (it's the single source of truth for `app/layout.tsx`, `app/sitemap.ts`, and `app/robots.ts`).
-- [ ] `perfekthub.vercel.app` case study is on hold pending confirmation of what that project actually is - the live page's content didn't match either "Perfekt Hub" or an existing case study when checked.
 
 ## Deploy (Vercel)
 

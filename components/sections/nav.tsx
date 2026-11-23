@@ -58,6 +58,20 @@ export function Nav() {
           </a>
         </div>
       </div>
+      <nav
+        aria-label="Sections"
+        className="mx-auto grid max-w-7xl grid-cols-4 gap-1 px-3 md:hidden"
+      >
+        {navLinks.map(({ href, label }) => (
+          <a
+            key={href}
+            href={href}
+            className="flex min-h-11 items-center justify-center rounded-md text-sm font-medium text-muted transition-colors hover:text-gold-deep focus-visible:text-gold-deep focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-gold-deep"
+          >
+            {label}
+          </a>
+        ))}
+      </nav>
     </header>
   );
 }

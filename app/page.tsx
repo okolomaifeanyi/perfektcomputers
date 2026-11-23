@@ -9,15 +9,25 @@ import { Contact } from "@/components/sections/contact";
 export default function Home() {
   return (
     <>
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:rounded-md focus:bg-surface focus:px-4 focus:py-3 focus:text-fg focus:ring-2 focus:ring-gold-deep"
+      >
+        Skip to content
+      </a>
       <Nav />
-      <main>
+      <main
+        id="main-content"
+        tabIndex={-1}
+        className="scroll-mt-32 md:scroll-mt-20"
+      >
         <Hero />
         <Services />
         <Work />
         <section
           id="about"
           aria-labelledby="about-ifeanyi"
-          className="scroll-mt-20 border-t border-line bg-paper py-20 md:py-28"
+          className="scroll-mt-32 border-t border-line bg-paper py-20 md:scroll-mt-20 md:py-28"
         >
           <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <h2

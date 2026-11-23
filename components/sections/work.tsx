@@ -4,7 +4,10 @@ import { caseStudies } from "@/lib/case-studies";
 
 export function Work() {
   return (
-    <section id="work" className="scroll-mt-20 bg-paper py-20 md:py-28">
+    <section
+      id="work"
+      className="scroll-mt-32 bg-paper py-20 md:scroll-mt-20 md:py-28"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-wrap items-baseline gap-3">
           <h2 className="text-3xl font-semibold tracking-tight text-fg sm:text-4xl md:text-5xl">

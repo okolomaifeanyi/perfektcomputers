@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-import { render, screen } from "@testing-library/react";
+import { render, screen, within } from "@testing-library/react";
 import { Nav } from "@/components/sections/nav";
 import { siteConfig } from "@/lib/site-config";
 
@@ -12,15 +12,16 @@ describe("Nav", () => {
 
   it("renders the primary section anchor links", () => {
     render(<Nav />);
-    expect(screen.getByRole("link", { name: "Services" })).toHaveAttribute(
+    const primary = within(screen.getByRole("navigation", { name: "Primary" }));
+    expect(primary.getByRole("link", { name: "Services" })).toHaveAttribute(
       "href",
       "#services"
     );
-    expect(screen.getByRole("link", { name: "Work" })).toHaveAttribute(
+    expect(primary.getByRole("link", { name: "Work" })).toHaveAttribute(
       "href",
       "#work"
     );
-    expect(screen.getByRole("link", { name: "Pricing" })).toHaveAttribute(
+    expect(primary.getByRole("link", { name: "Pricing" })).toHaveAttribute(
       "href",
       "#pricing"
     );

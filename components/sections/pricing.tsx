@@ -6,12 +6,18 @@ import { siteConfig } from "@/lib/site-config";
 
 export function Pricing() {
   return (
-    <section id="pricing" className="scroll-mt-20 bg-paper py-20 md:py-28">
+    <section
+      id="pricing"
+      className="scroll-mt-32 bg-paper py-20 md:scroll-mt-20 md:py-28"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-semibold tracking-tight text-fg sm:text-4xl md:text-5xl">
           Pricing
         </h2>
-        <span aria-hidden="true" className="mt-4 block h-0.5 w-12 bg-gold-deep" />
+        <span
+          aria-hidden="true"
+          className="mt-4 block h-0.5 w-12 bg-gold-deep"
+        />
         <p className="mt-4 max-w-[60ch] text-base text-muted">
           Starting prices below. Every project gets a fixed quote after a quick
           consultation.

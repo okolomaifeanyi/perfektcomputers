@@ -66,6 +66,41 @@ describe("Home page", () => {
     ).toBeInTheDocument();
   });
 
+  it("puts Skip to content first and targets programmatically focusable main", () => {
+    const { container, getByRole } = render(<Home />);
+    const skip = getByRole("link", { name: "Skip to content" });
+    expect(container.querySelector("a")).toBe(skip);
+    expect(skip).toHaveAttribute("href", "#main-content");
+    const main = getByRole("main");
+    expect(main).toHaveAttribute("id", "main-content");
+    expect(main).toHaveAttribute("tabindex", "-1");
+  });
+
+  it("keeps all four narrow navigation links and their section targets", () => {
+    const { container, getByRole } = render(<Home />);
+    const narrow = getByRole("navigation", { name: "Sections" });
+    const links = within(narrow).getAllByRole("link");
+    expect(links.map((link) => link.textContent)).toEqual([
+      "Services",
+      "Work",
+      "About",
+      "Pricing",
+    ]);
+    expect(links.map((link) => link.getAttribute("href"))).toEqual([
+      "#services",
+      "#work",
+      "#about",
+      "#pricing",
+    ]);
+    for (const link of links) {
+      expect(link).toHaveClass("min-h-11");
+      expect(container.querySelector(link.getAttribute("href")!)).toHaveClass(
+        "scroll-mt-32",
+        "md:scroll-mt-20"
+      );
+    }
+  });
+
   it("has exactly one h1", () => {
     const { container } = render(<Home />);
     expect(container.querySelectorAll("h1")).toHaveLength(1);

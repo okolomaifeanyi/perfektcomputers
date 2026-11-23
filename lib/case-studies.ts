@@ -62,11 +62,11 @@ export const caseStudies: CaseStudy[] = [
     standoutDetail:
       "Guests can compare listing details and submit an enquiry without paying on the site.",
     techStack: ["Next.js", "Supabase", "PostgreSQL"],
-    imageSrc: "/case-studies/savannah-spot.png",
+    imageSrc: "/case-studies/savanna-spot.webp",
     imageAlt:
-      'Earlier Savanna Spot homepage: "Experience Awka like never before" over a night skyline, with search and category sidebar',
+      'Savanna Spot homepage with the Lagos bridge at night, city choices, weather estimate, and venue search',
     imageWidth: 1310,
-    imageHeight: 900,
+    imageHeight: 679,
     url: "https://www.savannaspot.com/",
     featured: true,
   },

@@ -22,10 +22,10 @@ describe("pricingTiers", () => {
     expect(featured[0].id).toBe("standard");
   });
 
-  it("gives every tier a real, non-placeholder price and at least one feature", () => {
+  it("gives every tier a real, non-placeholder price and a defined scope", () => {
     for (const tier of pricingTiers) {
       expect(tier.price).toBeTruthy();
-      expect(tier.features.length).toBeGreaterThan(0);
+      expect(tier.description.length).toBeGreaterThan(100);
     }
   });
 
@@ -33,11 +33,11 @@ describe("pricingTiers", () => {
     expect(starterPrice).toBe("₦180,000");
     expect(standardPrice).toBe("₦450,000");
     expect(proPrice).toBe("From ₦950,000");
-    expect(carePlanPrice).toBe("₦25,000/mo");
+    expect(carePlanPrice).toBe("₦25,000/month");
 
     const byId = Object.fromEntries(pricingTiers.map((t) => [t.id, t.price]));
-    expect(byId["starter"]).toBe(starterPrice);
-    expect(byId["standard"]).toBe(standardPrice);
+    expect(byId["starter"]).toBe(`From ${starterPrice}`);
+    expect(byId["standard"]).toBe(`From ${standardPrice}`);
     expect(byId["pro"]).toBe(proPrice);
   });
 });

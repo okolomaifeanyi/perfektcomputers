@@ -1,4 +1,3 @@
-import { Check } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { pricingTiers } from "@/lib/pricing";
@@ -12,15 +11,16 @@ export function Pricing() {
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-semibold tracking-tight text-fg sm:text-4xl md:text-5xl">
-          Pricing
+          Straightforward pricing for your next website or app
         </h2>
         <span
           aria-hidden="true"
           className="mt-4 block h-0.5 w-12 bg-gold-deep"
         />
         <p className="mt-4 max-w-[60ch] text-base text-muted">
-          Starting prices below. Every project gets a fixed quote after a quick
-          consultation.
+          These are starting prices. After a short consultation, you’ll get a
+          fixed quote that sets out what’s included, the delivery timeline, and
+          any recurring costs.
         </p>
         <div className="reveal-stagger mt-12 grid gap-6 sm:grid-cols-3">
           {pricingTiers.map((tier) => (
@@ -38,29 +38,12 @@ export function Pricing() {
                 </span>
               ) : null}
               <h3 className="text-lg font-semibold text-fg">{tier.name}</h3>
-              <p className="mt-2 font-mono text-3xl font-semibold text-fg">
+              <p className="mt-2 font-mono text-2xl font-semibold text-fg md:text-3xl">
                 {tier.price}
               </p>
-              {/* min-h reserves 2 lines regardless of actual wrap, so the
-               * feature list below starts at the same Y across all three
-               * cards - some descriptions wrap to 1 line, others to 2. */}
-              <p className="mt-2 min-h-10 text-sm text-muted">
+              <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">
                 {tier.description}
               </p>
-              <ul className="mt-6 flex flex-1 flex-col gap-2">
-                {tier.features.map((feature) => (
-                  <li
-                    key={feature}
-                    className="flex items-start gap-2 text-sm text-fg"
-                  >
-                    <Check
-                      className="mt-0.5 h-4 w-4 shrink-0 text-gold-deep"
-                      strokeWidth={2}
-                    />
-                    {feature}
-                  </li>
-                ))}
-              </ul>
               <a
                 href={siteConfig.whatsappLink}
                 target="_blank"
@@ -69,7 +52,7 @@ export function Pricing() {
                   buttonVariants({
                     variant: tier.featured ? "default" : "outline",
                   }),
-                  "mt-6 rounded-full active:scale-[0.98]",
+                  "mt-6 h-auto min-h-11 rounded-full px-3 py-2 text-center whitespace-normal active:scale-[0.98]",
                   tier.featured
                     ? // Bright gold vs white text measures 2.1:1 (fails AA) - ink on
                       // gold measures 8.67:1. See docs/superpowers/specs/2026-08-07-
@@ -88,7 +71,7 @@ export function Pricing() {
                       "hover:bg-gold/5 hover:text-fg"
                 )}
               >
-                Chat on WhatsApp
+                Get a fixed quote · Chat on WhatsApp
               </a>
             </div>
           ))}

@@ -6,7 +6,7 @@ import {
   Wallet,
   type LucideIcon,
 } from "lucide-react";
-import { carePlanPrice } from "@/lib/pricing";
+import { carePlanDescription, carePlanPrice } from "@/lib/pricing";
 
 const standardServices = [
   {
@@ -93,16 +93,13 @@ export function Services() {
             className={`reveal-on-scroll group rounded-xl border border-gold-deep/30 bg-gold/5 p-6 hover:-translate-y-1.5 hover:shadow-[0_12px_32px_rgba(138,106,29,0.20)] dark:shadow-none dark:hover:shadow-none ${cardTransition}`}
           >
             <ServiceIcon icon={RefreshCw} />
-            <div className="mt-4 flex items-baseline gap-2">
+            <div className="mt-4 flex flex-wrap items-baseline gap-x-2 gap-y-1">
               <h3 className="text-base font-semibold text-fg">Care Plan</h3>
               <span className="font-mono text-sm text-gold-deep">
                 {carePlanPrice}
               </span>
             </div>
-            <p className="mt-2 text-sm text-muted">
-              If something breaks the night before a big sale, you&apos;re not
-              on your own.
-            </p>
+            <p className="mt-2 text-sm text-muted">{carePlanDescription}</p>
           </div>
         </div>
       </div>

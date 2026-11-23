@@ -47,12 +47,18 @@ function ServiceIcon({ icon: Icon }: { icon: LucideIcon }) {
 
 export function Services() {
   return (
-    <section id="services" className="scroll-mt-20 bg-surface py-20 md:py-28">
+    <section
+      id="services"
+      className="scroll-mt-32 bg-surface py-20 md:scroll-mt-20 md:py-28"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-semibold tracking-tight text-fg sm:text-4xl md:text-5xl">
           Services
         </h2>
-        <span aria-hidden="true" className="mt-4 block h-0.5 w-12 bg-gold-deep" />
+        <span
+          aria-hidden="true"
+          className="mt-4 block h-0.5 w-12 bg-gold-deep"
+        />
         <p className="mt-4 max-w-[60ch] text-pretty text-base text-muted">
           Everything a small business needs to get online, take payments, and
           stay running.
@@ -94,8 +100,8 @@ export function Services() {
               </span>
             </div>
             <p className="mt-2 text-sm text-muted">
-              If something breaks the night before a big sale, you&apos;re
-              not on your own.
+              If something breaks the night before a big sale, you&apos;re not
+              on your own.
             </p>
           </div>
         </div>

@@ -4,7 +4,10 @@ import { caseStudies } from "@/lib/case-studies";
 
 export function Work() {
   return (
-    <section id="work" className="scroll-mt-20 bg-paper py-20 md:py-28">
+    <section
+      id="work"
+      className="scroll-mt-32 bg-paper py-20 md:scroll-mt-20 md:py-28"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex flex-wrap items-baseline gap-3">
           <h2 className="text-3xl font-semibold tracking-tight text-fg sm:text-4xl md:text-5xl">
@@ -14,7 +17,10 @@ export function Work() {
             {caseStudies.length} shipped
           </span>
         </div>
-        <span aria-hidden="true" className="mt-4 block h-0.5 w-12 bg-gold-deep" />
+        <span
+          aria-hidden="true"
+          className="mt-4 block h-0.5 w-12 bg-gold-deep"
+        />
         <p className="mt-4 max-w-[60ch] text-pretty text-base text-muted">
           From online stores to real-time platforms.
         </p>
@@ -73,6 +79,32 @@ export function Work() {
                       Visit site
                       <ExternalLink className="h-3.5 w-3.5" strokeWidth={1.5} />
                     </a>
+                  ) : null}
+                  {study.relatedLink ? (
+                    <figure className="w-full max-w-64">
+                      <Image
+                        src={study.relatedLink.image.src}
+                        alt={study.relatedLink.image.alt}
+                        width={study.relatedLink.image.width}
+                        height={study.relatedLink.image.height}
+                        sizes="(max-width: 320px) calc(100vw - 5rem), 256px"
+                        className="h-auto w-full rounded-lg border border-line"
+                      />
+                      <figcaption className="mt-2">
+                        <a
+                          href={study.relatedLink.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex w-fit items-center gap-1 rounded-md text-sm font-medium text-gold-deep underline decoration-gold-deep/40 underline-offset-4 transition-colors hover:text-fg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-deep/60"
+                        >
+                          {study.relatedLink.label}
+                          <ExternalLink
+                            className="h-3.5 w-3.5 shrink-0"
+                            strokeWidth={1.5}
+                          />
+                        </a>
+                      </figcaption>
+                    </figure>
                   ) : null}
                   <ul
                     className="flex flex-wrap gap-2 font-mono text-xs text-muted"

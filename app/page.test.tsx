@@ -54,6 +54,16 @@ describe("Home page", () => {
     expect(
       links.getByRole("link", { name: "Explore Noble City Publishers (NCP)" })
     ).toHaveAttribute("href", "https://www.ijsrjournal.com/ncp");
+    expect(
+      links.getByRole("img", {
+        name: "International Journal of Spectrum Research homepage with journal title and mission statement",
+      })
+    ).toBeInTheDocument();
+    expect(
+      links.getByRole("img", {
+        name: "Noble City Publishers sample journal page for the Journal of Digital Enterprise and Sustainable Management",
+      })
+    ).toBeInTheDocument();
   });
 
   it("has exactly one h1", () => {

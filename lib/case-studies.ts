@@ -14,7 +14,11 @@ export interface CaseStudy {
   imageHeight: number;
   /** Live project URL, shown as a "Visit site" link when present. */
   url?: string;
-  relatedLink?: { label: string; url: string };
+  relatedLink?: {
+    label: string;
+    url: string;
+    image: { src: string; alt: string; width: number; height: number };
+  };
   featured?: boolean;
 }
 
@@ -55,6 +59,12 @@ export const caseStudies: CaseStudy[] = [
     relatedLink: {
       label: "Explore Noble City Publishers (NCP)",
       url: "https://www.ijsrjournal.com/ncp",
+      image: {
+        src: "/case-studies/ijsr-ncp.webp",
+        alt: "Noble City Publishers sample journal page for the Journal of Digital Enterprise and Sustainable Management",
+        width: 900,
+        height: 466,
+      },
     },
   },
   {

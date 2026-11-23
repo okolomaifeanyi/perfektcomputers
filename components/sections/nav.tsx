@@ -4,12 +4,7 @@ import { cn } from "@/lib/utils";
 import { siteConfig } from "@/lib/site-config";
 import { ThemeToggle } from "@/components/theme-toggle";
 
-const navLinks = [
-  { href: "#services", label: "Services" },
-  { href: "#work", label: "Work" },
-  { href: "#about", label: "About" },
-  { href: "#pricing", label: "Pricing" },
-];
+import { sectionLinks } from "@/lib/section-links";
 
 export function Nav() {
   return (
@@ -29,7 +24,7 @@ export function Nav() {
           />
         </a>
         <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
-          {navLinks.map((link) => (
+          {sectionLinks.map((link) => (
             <a
               key={link.href}
               href={link.href}
@@ -50,8 +45,8 @@ export function Nav() {
             target="_blank"
             rel="noopener noreferrer"
             className={cn(
-              buttonVariants(),
-              "rounded-full bg-gold text-ink hover:bg-gold/90 active:scale-[0.98]"
+              buttonVariants({ variant: "outline" }),
+              "rounded-full border-gold-deep/40 bg-transparent text-gold-deep hover:bg-gold/5 hover:text-fg active:scale-[0.98]"
             )}
           >
             Chat on WhatsApp
@@ -62,7 +57,7 @@ export function Nav() {
         aria-label="Sections"
         className="mx-auto grid max-w-7xl grid-cols-4 gap-1 px-3 md:hidden"
       >
-        {navLinks.map(({ href, label }) => (
+        {sectionLinks.map(({ href, label }) => (
           <a
             key={href}
             href={href}

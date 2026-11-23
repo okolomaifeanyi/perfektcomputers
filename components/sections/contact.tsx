@@ -1,5 +1,6 @@
 import { buttonVariants } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
+import { sectionLinks } from "@/lib/section-links";
 import { siteConfig } from "@/lib/site-config";
 
 export function Contact() {
@@ -16,9 +17,12 @@ export function Contact() {
         <h2 className="text-3xl font-semibold tracking-tight text-white sm:text-4xl md:text-5xl">
           Let&apos;s build something that works.
         </h2>
-        <span aria-hidden="true" className="mx-auto mt-4 block h-0.5 w-12 bg-gold" />
+        <span
+          aria-hidden="true"
+          className="mx-auto mt-4 block h-0.5 w-12 bg-gold"
+        />
         <p className="mx-auto mt-4 max-w-[46ch] text-base text-white/70">
-          Message us on WhatsApp for a fast reply, or email if you prefer.
+          Message us on WhatsApp, or email if you prefer.
         </p>
         <div className="mt-8 flex flex-col items-center gap-4">
           <a
@@ -39,7 +43,21 @@ export function Contact() {
             {siteConfig.email}
           </a>
         </div>
-        <p className="mt-12 text-xs text-white/60">
+        <nav
+          aria-label="Footer"
+          className="mt-8 flex flex-wrap justify-center gap-x-4 gap-y-1"
+        >
+          {sectionLinks.map(({ href, label }) => (
+            <a
+              key={href}
+              href={href}
+              className="inline-flex min-h-11 items-center rounded-md px-1 text-sm text-white/70 underline-offset-4 hover:text-white hover:underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold"
+            >
+              {label}
+            </a>
+          ))}
+        </nav>
+        <p className="mt-8 text-xs text-white/60">
           &copy; {new Date().getFullYear()} {siteConfig.name}. All rights
           reserved.
         </p>

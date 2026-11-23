@@ -1,26 +1,31 @@
+import { buttonVariants } from "@/components/ui/button";
+import { siteConfig } from "@/lib/site-config";
+import { cn } from "@/lib/utils";
+
 const steps = [
   {
     number: "1",
     title: "Consultation",
-    description: "We talk through what you need and what success looks like.",
+    description:
+      "We discuss your goals, what customers need to do, and what to build first.",
   },
   {
     number: "2",
     title: "Fixed quote & timeline",
     description:
-      "You get a clear price and delivery date before any work starts.",
+      "You get a fixed quote that sets out the scope, delivery timeline, and any recurring costs.",
   },
   {
     number: "3",
     title: "Build with check-ins",
     description:
-      "Regular updates as the site or app comes together, not a black box.",
+      "You get progress updates and a preview to review before launch.",
   },
   {
     number: "4",
     title: "Launch + handover",
     description:
-      "Your site goes live, and you get everything you need to run it.",
+      "We launch the project and hand over access and instructions to run it.",
   },
 ];
 
@@ -41,12 +46,18 @@ export function Process() {
         <h2 className="text-3xl font-semibold tracking-tight text-fg sm:text-4xl md:text-5xl">
           How it works
         </h2>
-        <span aria-hidden="true" className="mt-4 block h-0.5 w-12 bg-gold-deep" />
+        <span
+          aria-hidden="true"
+          className="mt-4 block h-0.5 w-12 bg-gold-deep"
+        />
         <ol className="mt-12 grid gap-10 sm:grid-cols-4 sm:gap-8">
           {steps.map((step, index) => (
             <li key={step.number}>
               <div className="flex items-center gap-4">
-                <span className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold/10 font-mono text-lg font-semibold text-gold-deep">
+                <span
+                  aria-hidden="true"
+                  className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-gold/10 font-mono text-lg font-semibold text-gold-deep"
+                >
                   <span
                     aria-hidden="true"
                     className={`absolute inset-0 rounded-full bg-gold/25 opacity-0 ${stepPulseClasses[index]}`}
@@ -67,6 +78,17 @@ export function Process() {
             </li>
           ))}
         </ol>
+        <a
+          href={siteConfig.whatsappLink}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={cn(
+            buttonVariants(),
+            "mt-8 h-auto min-h-11 rounded-full bg-gold px-4 py-2 text-ink hover:bg-gold/90"
+          )}
+        >
+          Get a fixed quote
+        </a>
       </div>
     </section>
   );
